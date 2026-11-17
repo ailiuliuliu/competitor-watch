@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-17T10:05:23.993Z",
+    "generated_at": "2026-11-17T10:13:12.354Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -27,7 +27,7 @@
     "counts": {
       "products": 16,
       "events": 128,
-      "current": 125,
+      "current": 124,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -1615,7 +1615,7 @@
       "date_role": "announced",
       "effective_at": null,
       "old": null,
-      "fact": "10月30日美国公告：图片识别生活问题并推荐商品、拍摄手写/数字清单转购物车、按人数预算和饮食要求规划菜谱并加购食材、健康替代推荐，以及店内地图/电子价签定位。语音预计2026年底全面推出，不能写成已全面可用。",
+      "fact": "10月30日美国公告：图片识别生活问题并推荐商品、拍摄手写/数字清单转购物车、按人数预算和饮食要求规划菜谱并加购食材、健康替代推荐，以及店内地图/电子价签定位。",
       "context": [
         {
           "label": "地区",
@@ -5144,7 +5144,7 @@
       "product_id": "sparky",
       "field": "capabilities",
       "field_label": "功能",
-      "value": "10月30日美国公告：图片识别生活问题并推荐商品、拍摄手写/数字清单转购物车、按人数预算和饮食要求规划菜谱并加购食材、健康替代推荐，以及店内地图/电子价签定位。语音预计2026年底全面推出，不能写成已全面可用。",
+      "value": "10月30日美国公告：图片识别生活问题并推荐商品、拍摄手写/数字清单转购物车、按人数预算和饮食要求规划菜谱并加购食材、健康替代推荐，以及店内地图/电子价签定位。",
       "context": [
         {
           "label": "地区",
@@ -7350,34 +7350,6 @@
         }
       ],
       "published_at": "2026-05-01",
-      "last_verified": "2026-11-17",
-      "sources": [
-        {
-          "title": "Alexa for Shopping价格历史功能与11月16日修订",
-          "url": "https://www.aboutamazon.com/news/retail/how-to-check-amazon-price-history"
-        }
-      ]
-    },
-    {
-      "product_id": "amazon",
-      "field": "business",
-      "field_label": "经营与规模",
-      "value": "Amazon于2026年11月16日修订的官方文章称，2026年全球超过1亿客户使用过价格历史功能，使用次数达数亿次；这是价格历史功能使用量，不等于Alexa for Shopping独立活跃用户、归因订单或利润。",
-      "context": [
-        {
-          "label": "指标",
-          "value": "price history use"
-        },
-        {
-          "label": "周期",
-          "value": "2026 to publication update"
-        },
-        {
-          "label": "范围",
-          "value": "global Amazon price history feature, not Alexa-only"
-        }
-      ],
-      "published_at": "2026-11-16",
       "last_verified": "2026-11-17",
       "sources": [
         {
