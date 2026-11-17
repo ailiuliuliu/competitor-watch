@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BHTYGVGF9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7BHTYGVGF9');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>竞品监控台 · Kyrie AI 洞察</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #070d1a;
+  --border: rgba(255,255,255,0.09);
+  --text: #c8d8e8;
+  --green: #16a34a;  --green-light: #dcfce7;
+  --blue: #2563eb;   --blue-light: #dbeafe;
+  --purple: #7c3aed; --purple-light: #f3e8ff;
+  --orange: #ea580c; --orange-light: #ffedd5;
+  --cyan: #0891b2;   --cyan-light: #cffafe;
+  --yellow: #ca8a04; --yellow-light: #fefce8;
+  --red: #dc2626;    --red-light: #fef2f2;
+  --shadow: 0 2px 16px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: linear-gradient(160deg, #070d1a 0%, #0a1020 50%, #0d1520 100%);
+  color: #c8d8e8;
+  font-family: 'Inter', 'Noto Serif SC', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.site-header { padding: 48px 56px 30px; text-align: center; }
+.header-kv { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.header-avatar {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #16a34a, #2563eb);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.header-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(24px, 3vw, 38px);
+  font-weight: 700;
+  background: linear-gradient(135deg, #6ee7b7 0%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header-sub { font-size: 13px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+.header-meta {
+  display: flex; justify-content: center; flex-wrap: wrap;
+  gap: 18px; margin-top: 14px;
+  font-size: 12px; color: rgba(255,255,255,0.35);
+}
+
+/* ── TAB BAR ── */
+.tab-bar {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;
+  padding: 22px 40px 4px;
+}
+.tab-btn {
+  padding: 8px 20px; border-radius: 10px;
+  font-size: 13px; font-weight: 700; cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.55);
+  transition: all 0.18s;
+}
+.tab-btn:hover { color: #c8d8e8; border-color: rgba(255,255,255,0.28); }
+.tab-btn.on { background: rgba(37,99,235,0.22); color: #93c5fd; border-color: rgba(37,99,235,0.5); }
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;
+  padding: 14px 40px 6px;
+}
+.filter-group { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.filter-label { font-size: 11px; color: rgba(255,255,255,0.3); font-weight: 700; letter-spacing: 0.06em; }
+.filter-btn {
+  padding: 4px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+  cursor: pointer; transition: all 0.18s;
+}
+.filter-btn:hover { border-color: #c8d8e8; color: #c8d8e8; }
+.filter-btn.on { color: #fff; border-color: transparent; }
+
+/* ── LAYOUT ── */
+.main-wrap { max-width: 900px; margin: 0 auto; padding: 8px 40px 90px; }
+.view { display: none; }
+.view.on { display: block; }
+.section-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 17px; font-weight: 700; color: #fff;
+  margin: 30px 0 6px;
+}
+.section-note { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 18px; }
+
+/* ── 说明框 ── */
+.notice-box {
+  background: linear-gradient(135deg, #0a0f1e 0%, #0f2027 60%, #0a1628 100%);
+  border-radius: 14px; padding: 18px 22px; margin: 22px 0 6px;
+  font-size: 12px; line-height: 1.85; color: rgba(255,255,255,0.72);
+  position: relative; overflow: hidden;
+}
+.notice-box::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 85% 20%, rgba(37,99,235,0.16) 0%, transparent 55%);
+}
+.notice-inner { position: relative; }
+.notice-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 8px;
+}
+.role-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.role-pill {
+  font-size: 11px; padding: 3px 10px; border-radius: 20px;
+  background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ── TOP 卡 ── */
+.top-list { display: flex; flex-direction: column; gap: 14px; }
+.top-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid var(--red);
+  border-radius: 14px; padding: 18px 20px;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.top-card:hover { transform: translateX(3px); box-shadow: var(--shadow-lg); }
+.tc-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.tc-rank {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,0.3);
+}
+.tc-prod { font-size: 14px; font-weight: 700; color: #fff; }
+.tc-date {
+  margin-left: auto; font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: rgba(255,255,255,0.5);
+}
+.tc-fact { font-size: 13px; line-height: 1.8; color: rgba(200,216,232,0.85); }
+.tc-old {
+  margin-top: 8px; padding: 7px 11px; border-radius: 8px;
+  background: rgba(220,38,38,0.08); border-left: 2px solid rgba(220,100,100,0.3);
+  font-size: 11px; color: rgba(200,216,232,0.65);
+}
+.tc-ctx { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.ctx-chip {
+  font-size: 10.5px; padding: 2px 9px; border-radius: 6px;
+  background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.ctx-chip b { color: rgba(255,255,255,0.4); font-weight: 600; margin-right: 3px; }
+.tc-src { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 10px; font-size: 11px; }
+.tc-src a {
+  color: #93c5fd; text-decoration: none;
+  border-bottom: 1px dotted rgba(147,197,253,0.4);
+}
+.tc-src a:hover { color: #bfdbfe; }
+
+/* ── 标签 ── */
+.ntag {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 2px 8px; border-radius: 6px; white-space: nowrap;
+}
+.ntag-red    { background: var(--red-light);    color: var(--red); }
+.ntag-blue   { background: var(--blue-light);   color: var(--blue); }
+.ntag-purple { background: var(--purple-light); color: var(--purple); }
+.ntag-green  { background: var(--green-light);  color: var(--green); }
+.ntag-orange { background: var(--orange-light); color: var(--orange); }
+.ntag-cyan   { background: var(--cyan-light);   color: var(--cyan); }
+.ntag-yellow { background: var(--yellow-light); color: var(--yellow); }
+.ntag-ghost  { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5); }
+
+/* ── 时间轴 ── */
+.timeline-wrap { position: relative; margin-top: 22px; }
+.timeline-wrap::before {
+  content: ''; position: absolute; left: 48px; top: 0; bottom: 0; width: 2px;
+  background: var(--border);
+}
+.year-group { margin-bottom: 4px; }
+.year-marker {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 12px; position: relative; z-index: 1;
+}
+.year-badge {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700;
+  flex-shrink: 0; border: 2px solid;
+  background: rgba(255,255,255,0.04); box-shadow: var(--shadow);
+  position: relative; z-index: 2;
+}
+.year-divider { flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+.year-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.35); white-space: nowrap; }
+.milestone-cards {
+  padding-left: 76px; display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 22px; position: relative;
+}
+.milestone-cards::before {
+  content: ''; position: absolute; left: -28px; top: 24px; width: 28px; height: 2px;
+  background: rgba(255,255,255,0.08);
+}
+.milestone-card {
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px; padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: var(--shadow);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.milestone-card:hover { transform: translateX(4px); box-shadow: var(--shadow-lg); }
+.milestone-card.anchor { border-style: dashed; }
+.mc-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.mc-meta { flex: 1; }
+.mc-name { font-size: 13px; font-weight: 700; color: #c8d8e8; line-height: 1.4; }
+.mc-who { font-size: 11px; color: rgba(255,255,255,0.35); font-weight: 500; margin-top: 2px; }
+.mc-badge {
+  padding: 2px 8px; border-radius: 6px;
+  font-size: 10px; font-weight: 700; white-space: nowrap; flex-shrink: 0;
+}
+.mc-body { font-size: 12px; line-height: 1.75; color: rgba(200,216,232,0.78); }
+.mc-foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 9px; }
+.mc-foot a {
+  font-size: 11px; color: #93c5fd; text-decoration: none;
+  border-bottom: 1px dotted rgba(147,197,253,0.4);
+}
+.mc-foot a:hover { color: #bfdbfe; }
+
+/* ── 竞品档案 ── */
+.prod-picker { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0 6px; }
+.prod-chip {
+  padding: 6px 14px; border-radius: 10px; cursor: pointer;
+  font-size: 12.5px; font-weight: 600;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.55);
+  transition: all 0.16s;
+}
+.prod-chip:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+.prod-chip.on { color: #fff; border-color: transparent; }
+.prod-head {
+  display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px;
+  margin: 26px 0 4px;
+}
+.prod-name { font-family: 'Noto Serif SC', serif; font-size: 22px; font-weight: 700; color: #fff; }
+.prod-site a { font-size: 12px; color: #93c5fd; text-decoration: none; }
+.prod-site a:hover { text-decoration: underline; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-top: 14px; }
+.state-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px; padding: 14px 16px;
+}
+.sc-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 7px;
+}
+.sc-value { font-size: 12.5px; line-height: 1.8; color: rgba(200,216,232,0.85); }
+.sc-foot { margin-top: 9px; display: flex; flex-wrap: wrap; gap: 8px; font-size: 10.5px; color: rgba(255,255,255,0.35); }
+.sc-foot a { color: #93c5fd; text-decoration: none; }
+.empty { font-size: 12px; color: rgba(255,255,255,0.3); font-style: italic; }
+.loading { text-align: center; padding: 60px 0; color: rgba(255,255,255,0.4); font-size: 13px; }
+.err {
+  text-align: center; padding: 40px 20px; margin: 30px 0;
+  border: 1px solid rgba(220,38,38,0.3); border-radius: 12px;
+  background: rgba(220,38,38,0.06); font-size: 13px; color: #fca5a5;
+}
+.foot {
+  margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 11px; line-height: 1.9; color: rgba(255,255,255,0.28);
+}
+@media (max-width: 640px) {
+  .site-header { padding: 32px 20px 22px; }
+  .main-wrap { padding: 8px 18px 60px; }
+  .milestone-cards { padding-left: 0; }
+  .milestone-cards::before { display: none; }
+  .timeline-wrap::before { display: none; }
+  .year-marker { gap: 10px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-kv">
+    <div class="header-avatar">🎯</div>
+    <div>
+      <div class="header-title">竞品监控台</div>
+      <div class="header-sub">AI 创作 Agent 与 AI 购物助手的公开动态</div>
+    </div>
+  </div>
+  <div class="header-meta" id="headerMeta"><span>加载中…</span></div>
+</header>
+
+<div class="tab-bar">
+  <button class="tab-btn on" data-tab="latest" onclick="setTab('latest')">⚡ 最新动态</button>
+  <button class="tab-btn" data-tab="trend" onclick="setTab('trend')">📈 行业演变</button>
+  <button class="tab-btn" data-tab="products" onclick="setTab('products')">🧩 竞品档案</button>
+</div>
+
+<div id="filters"></div>
+
+<div class="main-wrap">
+  <div id="status" class="loading">正在读取监控数据…</div>
+  <div class="view on" id="view-latest"></div>
+  <div class="view" id="view-trend"></div>
+  <div class="view" id="view-products"></div>
+
+  <div class="foot" id="foot"></div>
+</div>
+
+<script>
+const DATA_URL = 'data.json';
+let D = null;
+
+const CAT_COLOR = { create: 'var(--purple)', agent: 'var(--cyan)', shop: 'var(--orange)' };
+const CAT_TAG   = { create: 'ntag-purple', agent: 'ntag-cyan', shop: 'ntag-orange' };
+const FIELD_COLOR = {
+  position: 'blue', capabilities: 'purple', pricing: 'orange', credits: 'yellow',
+  free: 'green', failure: 'red', regions: 'cyan', business: 'blue',
+};
+const ROLE_TAG = { announced: 'ntag-green', effective: 'ntag-blue', recorded: 'ntag-ghost', reported: 'ntag-yellow', retro: 'ntag-ghost' };
+
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) =>
+  ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+const prod = (id) => D.products.find((p) => p.id === id) || { id, name: id, category: '', category_label: '' };
+const fmtDay = (d) => (d ? d.replace(/-/g, '.') : '日期未公布');
+
+function srcLinks(sources, cls) {
+  if (!sources || !sources.length) return '';
+  return `<div class="${cls}">` + sources.map((s) =>
+    `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join('') + '</div>';
+}
+
+function ctxChips(ctx) {
+  if (!ctx || !ctx.length) return '';
+  return '<div class="tc-ctx">' + ctx.map((c) =>
+    `<span class="ctx-chip"><b>${esc(c.label)}</b>${esc(c.value)}</span>`).join('') + '</div>';
+}
+
+function factCard(e, opts) {
+  const o = opts || {};
+  const p = prod(e.product_id);
+  const color = CAT_COLOR[p.category] || 'var(--blue)';
+  const tag = FIELD_COLOR[e.field] ? `ntag-${FIELD_COLOR[e.field]}` : 'ntag-ghost';
+  const roleLabel = D.meta.date_role_labels[e.date_role] || '收录日';
+  const badge = e.important
+    ? '<span class="ntag ntag-red">重点</span>' : '';
+  return `<div class="milestone-card${e.origin === 'anchor' ? ' anchor' : ''}" style="border-color:${o.flagship ? color : 'rgba(255,255,255,0.08)'};">
+    <div class="mc-top">
+      <div class="mc-meta">
+        <div class="mc-name">${esc(p.name)} · ${esc(e.field_label || e.kind || '')}</div>
+        <div class="mc-who">${fmtDay(e.date)} · ${esc(roleLabel)}${e.effective_at ? ' · 生效日 ' + fmtDay(e.effective_at) : ''}</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;">
+        <span class="ntag ${tag}">${esc(e.field_label)}</span>${badge}
+      </div>
+    </div>
+    <div class="mc-body">${esc(e.fact)}</div>
+    ${e.old ? `<div class="tc-old">此前：${esc(e.old)}</div>` : ''}
+    ${ctxChips(e.context)}
+    <div class="mc-foot">${(e.sources || []).map((s) =>
+      `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join(' · ')}</div>
+  </div>`;
+}
+
+function timeline(items) {
+  if (!items.length) return '<div class="empty">当前筛选条件下没有记录。</div>';
+  const byYear = new Map();
+  items.forEach((it) => {
+    const y = (it.date || '0000').slice(0, 4);
+    if (!byYear.has(y)) byYear.set(y, []);
+    byYear.get(y).push(it);
+  });
+  const years = [...byYear.keys()].filter((y) => y !== '0000').sort().reverse();
+  return '<div class="timeline-wrap">' + years.map((y) => {
+    const list = byYear.get(y).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    const first = list[0];
+    const color = CAT_COLOR[prod(first.product_id).category] || 'var(--blue)';
+    return `<div class="year-group">
+      <div class="year-marker">
+        <div class="year-badge" style="color:${color};border-color:${color};">${y}</div>
+        <div class="year-divider"></div>
+        <div class="year-label">${list.length} 条</div>
+      </div>
+      <div class="milestone-cards">${list.map((it) => factCard(it)).join('')}</div>
+    </div>`;
+  }).join('') + '</div>';
+}
+
+/* ── 视图 1：最新动态 ── */
+function renderLatest() {
+  const imp = D.events.filter((e) => e.important);
+  const recent = [...imp].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  const top = recent.slice(0, 5);
+  const rest = recent.slice(5);
+  const recordedOnly = D.events.filter((e) => e.date_role === 'recorded' && !e.important).length;
+
+  document.getElementById('view-latest').innerHTML = `
+    <div class="notice-box"><div class="notice-inner">
+      <div class="notice-label">阅读前请知悉</div>
+      ${esc(D.meta.disclaimer)}
+      <div class="role-pills">
+        <span class="role-pill">公告日 ${D.events.filter((e) => e.date_role === 'announced').length} 条</span>
+        <span class="role-pill">生效日 ${D.events.filter((e) => e.date_role === 'effective').length} 条</span>
+        <span class="role-pill">收录日 ${D.events.filter((e) => e.date_role === 'recorded').length} 条</span>
+        <span class="role-pill">历史里程碑 ${D.anchors.length} 个</span>
+      </div>
+    </div></div>
+
+    <div class="section-title">最新 5 条重点动态</div>
+    <div class="section-note">按官方公告日排序；公告日缺失时退回生效日或收录日。</div>
+    <div class="top-list">${top.map((e, i) => topCard(e, i)).join('')}</div>
+
+    <div class="section-title">全部重点动态（${imp.length} 条）</div>
+    <div class="section-note">收录日口径的 ${recordedOnly} 条常规动态不在此列，见「行业演变」。</div>
+    ${timeline(rest)}
+  `;
+}
+
+function topCard(e, i) {
+  const p = prod(e.product_id);
+  const roleLabel = D.meta.date_role_labels[e.date_role] || '收录日';
+  return `<div class="top-card" style="border-left-color:${CAT_COLOR[p.category] || 'var(--red)'};">
+    <div class="tc-head">
+      <span class="tc-rank">0${i + 1}</span>
+      <span class="tc-prod">${esc(p.name)}</span>
+      <span class="ntag ${FIELD_COLOR[e.field] ? 'ntag-' + FIELD_COLOR[e.field] : 'ntag-ghost'}">${esc(e.field_label)}</span>
+      <span class="ntag ${CAT_TAG[p.category] || 'ntag-ghost'}">${esc(p.category_label)}</span>
+      <span class="tc-date">${fmtDay(e.date)} · ${esc(roleLabel)}</span>
+    </div>
+    <div class="tc-fact">${esc(e.fact)}</div>
+    ${e.old ? `<div class="tc-old">此前：${esc(e.old)}</div>` : ''}
+    ${ctxChips(e.context)}
+    ${srcLinks(e.sources, 'tc-src')}
+  </div>`;
+}
+
+/* ── 视图 2：行业演变 ── */
+function renderTrend() {
+  const anchors = D.anchors.map((a) => ({
+    id: 'anchor-' + a.product_id + '-' + a.date,
+    product_id: a.product_id,
+    field: 'milestone',
+    field_label: '里程碑',
+    kind: '历史里程碑',
+    important: false,
+    date: a.date,
+    date_role: a.date_role,
+    fact: a.fact + (a.precision === 'month' ? '（官方只给到月份精度）' : a.precision === 'inferred' ? '（日期由官方材料推断）' : ''),
+    context: [],
+    sources: [{ title: a.source === 'official' ? '官方来源' : '第三方来源', url: a.url }],
+    origin: 'anchor',
+  }));
+  const events = D.events.filter(filterByState);
+  const items = [...anchors.filter(anchorPasses), ...events];
+  items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+  const span = items.length ? `${fmtDay(items[items.length - 1].date)} → ${fmtDay(items[0].date)}` : '';
+  document.getElementById('view-trend').innerHTML = `
+    <div class="section-title">行业演变时间轴</div>
+    <div class="section-note">
+      虚线卡是补充调研得到的历史里程碑，用于给时间轴开头；实线卡是 ${esc(D.meta.baseline_date.replace(/-/g, '.'))} 起每日监控记录的变化。
+      当前范围 ${span}，共 ${items.length} 条。
+    </div>
+    ${timeline(items)}
+  `;
+}
+
+/* ── 视图 3：竞品档案 ── */
+function renderProducts() {
+  const p = prod(state.product);
+  const states = D.current.filter((c) => c.product_id === p.id);
+  const evs = D.events.filter((e) => e.product_id === p.id);
+  const anch = D.anchors.filter((a) => a.product_id === p.id);
+  const color = CAT_COLOR[p.category] || 'var(--blue)';
+
+  const order = ['position', 'capabilities', 'pricing', 'credits', 'free', 'failure', 'regions', 'business'];
+  states.sort((a, b) => order.indexOf(a.field) - order.indexOf(b.field));
+
+  const items = [
+    ...anch.map((a) => ({
+      product_id: a.product_id, field: 'milestone', field_label: '里程碑', kind: '历史里程碑',
+      important: false, date: a.date, date_role: a.date_role, fact: a.fact, context: [],
+      sources: [{ title: a.source === 'official' ? '官方来源' : '第三方来源', url: a.url }], origin: 'anchor',
+    })),
+    ...evs,
+  ].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+  document.getElementById('view-products').innerHTML = `
+    <div class="prod-picker">${D.products.map((x) => `<button class="prod-chip${x.id === p.id ? ' on' : ''}"
+      style="${x.id === p.id ? `background:${CAT_COLOR[x.category]};` : ''}"
+      onclick="setProduct('${x.id}')">${esc(x.name)}</button>`).join('')}</div>
+
+    <div class="prod-head">
+      <div class="prod-name">${esc(p.name)}</div>
+      <span class="ntag ${CAT_TAG[p.category] || 'ntag-ghost'}">${esc(p.category_label)}</span>
+      ${p.site ? `<span class="prod-site"><a href="${esc(p.site)}" target="_blank" rel="noopener noreferrer">官网 ↗</a></span>` : ''}
+    </div>
+    <div class="section-note">
+      ${states.length ? '' : '暂无已核实的当前状态记录。'}
+      下列字段为最近一次核实值，核实日期见卡片右下角。
+    </div>
+
+    <div class="grid2">${states.map((c) => stateCard(c, states)).join('')}</div>
+
+    <div class="section-title">里程碑与变化（${items.length} 条）</div>
+    <div class="section-note">虚线为历史里程碑，实线为每日监控记录。</div>
+    ${timeline(items)}
+  `;
+}
+
+function stateCard(c, siblings) {
+  // 同一字段可能按地区/套餐分成多行，只写「定价」看不出区别，用上下文补一个区分后缀。
+  const dup = siblings && siblings.filter((x) => x.field === c.field).length > 1;
+  const suffix = dup && c.context && c.context.length ? ` · ${c.context[0].value}` : '';
+  return `<div class="state-card" style="border-left:2px solid var(--${FIELD_COLOR[c.field] || 'blue'});">
+    <div class="sc-label">${esc(c.field_label)}${esc(suffix)}</div>
+    <div class="sc-value">${esc(c.value)}</div>
+    ${ctxChips(c.context)}
+    <div class="sc-foot">
+      ${c.sources.map((s) => `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a>`).join(' · ')}
+      ${c.last_verified ? `<span>核实 ${fmtDay(c.last_verified)}</span>` : ''}
+    </div>
+  </div>`;
+}
+
+/* ── 筛选状态 ── */
+const state = { tab: 'latest', category: '', field: '', role: '', product: 'oiioii' };
+
+function filterByState(e) {
+  if (state.category && prod(e.product_id).category !== state.category) return false;
+  if (state.field && e.field !== state.field) return false;
+  if (state.role && e.date_role !== state.role) return false;
+  return true;
+}
+function anchorPasses(a) {
+  if (state.category && prod(a.product_id).category !== state.category) return false;
+  if (state.field) return false;
+  if (state.role && a.date_role !== state.role) return false;
+  return true;
+}
+
+function renderFilters() {
+  if (state.tab === 'latest') { document.getElementById('filters').innerHTML = ''; return; }
+  const cats = Object.keys(D.meta.category_labels).map((k) =>
+    `<button class="filter-btn${state.category === k ? ' on' : ''}" style="${state.category === k ? `background:${CAT_COLOR[k]};` : ''}"
+      onclick="setFilter('category','${k}')">${esc(D.meta.category_labels[k])}</button>`).join('');
+  const fields = Object.keys(D.meta.field_labels).map((k) =>
+    `<button class="filter-btn${state.field === k ? ' on' : ''}" style="${state.field === k ? 'background:var(--blue);' : ''}"
+      onclick="setFilter('field','${k}')">${esc(D.meta.field_labels[k])}</button>`).join('');
+  const roles = Object.keys(D.meta.date_role_labels).filter((k) => k !== 'retro').map((k) =>
+    `<button class="filter-btn${state.role === k ? ' on' : ''}" style="${state.role === k ? 'background:var(--green);' : ''}"
+      onclick="setFilter('role','${k}')">${esc(D.meta.date_role_labels[k])}</button>`).join('');
+  const clear = (state.category || state.field || state.role)
+    ? `<button class="filter-btn" style="border-color:rgba(220,38,38,0.4);color:#fca5a5;" onclick="clearFilters()">清除筛选</button>` : '';
+  document.getElementById('filters').innerHTML = `<div class="filter-bar">
+    <div class="filter-group"><span class="filter-label">类别</span>${cats}</div>
+    ${state.tab === 'trend' ? `<div class="filter-group"><span class="filter-label">维度</span>${fields}</div>` : ''}
+    <div class="filter-group"><span class="filter-label">日期口径</span>${roles}</div>
+    ${clear}
+  </div>`;
+}
+
+function setTab(t) {
+  state.tab = t;
+  document.querySelectorAll('.tab-btn').forEach((b) => b.classList.toggle('on', b.dataset.tab === t));
+  document.querySelectorAll('.view').forEach((v) => v.classList.remove('on'));
+  document.getElementById('view-' + t).classList.add('on');
+  renderFilters();
+  render();
+}
+function setFilter(k, v) { state[k] = state[k] === v ? '' : v; renderFilters(); render(); }
+function clearFilters() { state.category = ''; state.field = ''; state.role = ''; renderFilters(); render(); }
+function setProduct(id) { state.product = id; render(); }
+
+function render() {
+  if (!D) return;
+  if (state.tab === 'latest') renderLatest();
+  else if (state.tab === 'trend') renderTrend();
+  else renderProducts();
+}
+
+async function boot() {
+  try {
+    const r = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    D = await r.json();
+  } catch (err) {
+    document.getElementById('status').outerHTML =
+      `<div class="err">数据读取失败（${esc(err.message)}）。本页需要先加载 data.json，请确认站点部署完整后刷新。</div>`;
+    return;
+  }
+  document.getElementById('status').remove();
+  document.getElementById('headerMeta').innerHTML = `
+    <span>🧭 ${D.meta.counts.products} 个竞品</span>
+    <span>📌 ${D.meta.counts.events} 条监控记录</span>
+    <span>🗓 ${D.meta.counts.anchors} 个历史里程碑</span>
+    <span>🔄 数据生成于 ${esc(D.meta.generated_at.slice(0, 10).replace(/-/g, '.'))}</span>`;
+  document.getElementById('foot').innerHTML = `
+    本页由本地监控数据自动导出，只收录可从公开来源核对的产品事实，不含内部影响判断与监控分层信息。<br>
+    每条记录附官方或原始来源链接；日期口径分为公告日、生效日、收录日三种，收录日仅表示我们首次读到该信息，不代表事件发生在当天。<br>
+    历史里程碑来自补充调研，用于给时间轴开头，精度可能只到月份或需要推断，已在正文标注。`;
+  renderFilters();
+  render();
+}
+boot();
+</script>
+</body>
+</html>
