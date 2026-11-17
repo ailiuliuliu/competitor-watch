@@ -469,12 +469,14 @@ function pickTop(stories, n) {
     if (i < 0) break;
     top.push(rest.splice(i, 1)[0]);
   }
-  return { top: top.sort((a, b) => (b.date || '').localeCompare(a.date || '')), rest };
+  return top.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
 }
 
 function renderLatest() {
   const imp = D.events.filter((e) => e.important);
-  const picked = pickTop(buildStories(imp), 5);
+  const top = pickTop(buildStories(imp.filter((e) => e.top_eligible !== false)), 5);
+  const shown = new Set(top.flatMap((s) => s.items.map((e) => e.id)));
+  const archive = imp.filter((e) => !shown.has(e.id));
   const recordedOnly = D.events.filter((e) => e.date_role === 'recorded' && !e.important).length;
 
   document.getElementById('view-latest').innerHTML = `
@@ -489,13 +491,13 @@ function renderLatest() {
       </div>
     </div></div>
 
-    <div class="section-title">最新 ${picked.top.length} 条重点动态</div>
+    <div class="section-title">最新 ${top.length} 条重点动态</div>
     <div class="section-note">同一天、指向同一来源的多个维度并为一条；不同竞品优先各占一席，凑不满时由次新动态补位。按公告日排序，缺失时退回生效日或收录日。</div>
-    <div class="top-list">${picked.top.map((s, i) => topCard(s, i)).join('')}</div>
+    <div class="top-list">${top.map((s, i) => topCard(s, i)).join('')}</div>
 
     <div class="section-title">全部重点动态（${imp.length} 条）</div>
     <div class="section-note">收录日口径的 ${recordedOnly} 条常规动态不在此列，按竞品查看见「竞品档案」。下方按单条记录展开，不做合并。</div>
-    ${timeline(picked.rest.flatMap((s) => s.items))}
+    ${timeline(archive)}
   `;
 }
 
