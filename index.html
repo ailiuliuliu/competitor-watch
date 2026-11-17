@@ -11,7 +11,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>竞品监控台 · Kyrie AI 洞察</title>
+<title>竞品动态监控平台 · Kyrie AI 洞察</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -300,7 +300,7 @@ body {
   <div class="header-kv">
     <div class="header-avatar">🎯</div>
     <div>
-      <div class="header-title">竞品监控台</div>
+      <div class="header-title">竞品动态监控平台</div>
       <div class="header-sub">AI 创作 Agent 与 AI 购物助手的公开动态</div>
     </div>
   </div>
@@ -309,7 +309,6 @@ body {
 
 <div class="tab-bar">
   <button class="tab-btn on" data-tab="latest" onclick="setTab('latest')">⚡ 最新动态</button>
-  <button class="tab-btn" data-tab="trend" onclick="setTab('trend')">📈 行业演变</button>
   <button class="tab-btn" data-tab="products" onclick="setTab('products')">🧩 竞品档案</button>
 </div>
 
@@ -318,7 +317,6 @@ body {
 <div class="main-wrap">
   <div id="status" class="loading">正在读取监控数据…</div>
   <div class="view on" id="view-latest"></div>
-  <div class="view" id="view-trend"></div>
   <div class="view" id="view-products"></div>
 
   <div class="foot" id="foot"></div>
@@ -429,7 +427,7 @@ function renderLatest() {
     <div class="top-list">${top.map((e, i) => topCard(e, i)).join('')}</div>
 
     <div class="section-title">全部重点动态（${imp.length} 条）</div>
-    <div class="section-note">收录日口径的 ${recordedOnly} 条常规动态不在此列，见「行业演变」。</div>
+    <div class="section-note">收录日口径的 ${recordedOnly} 条常规动态不在此列，按竞品查看见「竞品档案」。</div>
     ${timeline(rest)}
   `;
 }
@@ -452,59 +450,45 @@ function topCard(e, i) {
   </div>`;
 }
 
-/* ── 视图 2：行业演变 ── */
-function renderTrend() {
-  const anchors = D.anchors.map((a) => ({
-    id: 'anchor-' + a.product_id + '-' + a.date,
-    product_id: a.product_id,
-    field: 'milestone',
-    field_label: '里程碑',
-    kind: '历史里程碑',
-    important: false,
-    date: a.date,
-    date_role: a.date_role,
+/* ── 视图 2：竞品档案 ── */
+function anchorItem(a) {
+  return {
+    product_id: a.product_id, field: 'milestone', field_label: '里程碑', kind: '历史里程碑',
+    important: false, date: a.date, date_role: a.date_role,
     fact: a.fact + (a.precision === 'month' ? '（官方只给到月份精度）' : a.precision === 'inferred' ? '（日期由官方材料推断）' : ''),
     context: [],
     sources: [{ title: a.source === 'official' ? '官方来源' : '第三方来源', url: a.url }],
     origin: 'anchor',
-  }));
-  const events = D.events.filter(filterByState);
-  const items = [...anchors.filter(anchorPasses), ...events];
-  items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-
-  const span = items.length ? `${fmtDay(items[items.length - 1].date)} → ${fmtDay(items[0].date)}` : '';
-  document.getElementById('view-trend').innerHTML = `
-    <div class="section-title">行业演变时间轴</div>
-    <div class="section-note">
-      虚线卡是补充调研得到的历史里程碑，用于给时间轴开头；实线卡是 ${esc(D.meta.baseline_date.replace(/-/g, '.'))} 起每日监控记录的变化。
-      当前范围 ${span}，共 ${items.length} 条。
-    </div>
-    ${timeline(items)}
-  `;
+  };
 }
 
-/* ── 视图 3：竞品档案 ── */
 function renderProducts() {
-  const p = prod(state.product);
-  const states = D.current.filter((c) => c.product_id === p.id);
-  const evs = D.events.filter((e) => e.product_id === p.id);
-  const anch = D.anchors.filter((a) => a.product_id === p.id);
-  const color = CAT_COLOR[p.category] || 'var(--blue)';
+  // 类别筛竞品、维度筛字段，叠加起来就是「某竞品 × 某维度」。
+  const scope = state.category ? D.products.filter((x) => x.category === state.category) : D.products;
+  const p = scope.find((x) => x.id === state.product) || scope[0];
+  if (!p) {
+    document.getElementById('view-products').innerHTML = '<div class="empty">该类别下暂无竞品记录。</div>';
+    return;
+  }
+  state.product = p.id;
 
   const order = ['position', 'capabilities', 'pricing', 'credits', 'free', 'failure', 'regions', 'business'];
-  states.sort((a, b) => order.indexOf(a.field) - order.indexOf(b.field));
+  const allStates = D.current.filter((c) => c.product_id === p.id);
+  const states = (state.field ? allStates.filter((c) => c.field === state.field) : allStates)
+    .sort((a, b) => order.indexOf(a.field) - order.indexOf(b.field));
 
   const items = [
-    ...anch.map((a) => ({
-      product_id: a.product_id, field: 'milestone', field_label: '里程碑', kind: '历史里程碑',
-      important: false, date: a.date, date_role: a.date_role, fact: a.fact, context: [],
-      sources: [{ title: a.source === 'official' ? '官方来源' : '第三方来源', url: a.url }], origin: 'anchor',
-    })),
-    ...evs,
-  ].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    ...D.anchors.filter((a) => a.product_id === p.id).map(anchorItem),
+    ...D.events.filter((e) => e.product_id === p.id),
+  ].filter((it) => !state.field || it.field === state.field)
+   .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+  const scopeNote = state.field
+    ? `已按「${esc(D.meta.field_labels[state.field])}」筛选，只展示该维度的核实值与记录。`
+    : '下列字段为最近一次核实值，核实日期见卡片右下角。';
 
   document.getElementById('view-products').innerHTML = `
-    <div class="prod-picker">${D.products.map((x) => `<button class="prod-chip${x.id === p.id ? ' on' : ''}"
+    <div class="prod-picker">${scope.map((x) => `<button class="prod-chip${x.id === p.id ? ' on' : ''}"
       style="${x.id === p.id ? `background:${CAT_COLOR[x.category]};` : ''}"
       onclick="setProduct('${x.id}')">${esc(x.name)}</button>`).join('')}</div>
 
@@ -514,14 +498,14 @@ function renderProducts() {
       ${p.site ? `<span class="prod-site"><a href="${esc(p.site)}" target="_blank" rel="noopener noreferrer">官网 ↗</a></span>` : ''}
     </div>
     <div class="section-note">
-      ${states.length ? '' : '暂无已核实的当前状态记录。'}
-      下列字段为最近一次核实值，核实日期见卡片右下角。
+      ${states.length ? '' : '该竞品在此维度下暂无已核实的当前状态记录。'}
+      ${scopeNote}
     </div>
 
-    <div class="grid2">${states.map((c) => stateCard(c, states)).join('')}</div>
+    <div class="grid2">${states.map((c) => stateCard(c, allStates)).join('')}</div>
 
     <div class="section-title">里程碑与变化（${items.length} 条）</div>
-    <div class="section-note">虚线为历史里程碑，实线为每日监控记录。</div>
+    <div class="section-note">虚线为补充调研得到的历史里程碑，实线为 ${esc(D.meta.baseline_date.replace(/-/g, '.'))} 起每日监控记录的变化。</div>
     ${timeline(items)}
   `;
 }
@@ -542,38 +526,21 @@ function stateCard(c, siblings) {
 }
 
 /* ── 筛选状态 ── */
-const state = { tab: 'latest', category: '', field: '', role: '', product: 'oiioii' };
-
-function filterByState(e) {
-  if (state.category && prod(e.product_id).category !== state.category) return false;
-  if (state.field && e.field !== state.field) return false;
-  if (state.role && e.date_role !== state.role) return false;
-  return true;
-}
-function anchorPasses(a) {
-  if (state.category && prod(a.product_id).category !== state.category) return false;
-  if (state.field) return false;
-  if (state.role && a.date_role !== state.role) return false;
-  return true;
-}
+const state = { tab: 'latest', category: '', field: '', product: 'oiioii' };
 
 function renderFilters() {
-  if (state.tab === 'latest') { document.getElementById('filters').innerHTML = ''; return; }
+  if (state.tab !== 'products') { document.getElementById('filters').innerHTML = ''; return; }
   const cats = Object.keys(D.meta.category_labels).map((k) =>
     `<button class="filter-btn${state.category === k ? ' on' : ''}" style="${state.category === k ? `background:${CAT_COLOR[k]};` : ''}"
       onclick="setFilter('category','${k}')">${esc(D.meta.category_labels[k])}</button>`).join('');
   const fields = Object.keys(D.meta.field_labels).map((k) =>
     `<button class="filter-btn${state.field === k ? ' on' : ''}" style="${state.field === k ? 'background:var(--blue);' : ''}"
       onclick="setFilter('field','${k}')">${esc(D.meta.field_labels[k])}</button>`).join('');
-  const roles = Object.keys(D.meta.date_role_labels).filter((k) => k !== 'retro').map((k) =>
-    `<button class="filter-btn${state.role === k ? ' on' : ''}" style="${state.role === k ? 'background:var(--green);' : ''}"
-      onclick="setFilter('role','${k}')">${esc(D.meta.date_role_labels[k])}</button>`).join('');
-  const clear = (state.category || state.field || state.role)
+  const clear = (state.category || state.field)
     ? `<button class="filter-btn" style="border-color:rgba(220,38,38,0.4);color:#fca5a5;" onclick="clearFilters()">清除筛选</button>` : '';
   document.getElementById('filters').innerHTML = `<div class="filter-bar">
     <div class="filter-group"><span class="filter-label">类别</span>${cats}</div>
-    ${state.tab === 'trend' ? `<div class="filter-group"><span class="filter-label">维度</span>${fields}</div>` : ''}
-    <div class="filter-group"><span class="filter-label">日期口径</span>${roles}</div>
+    <div class="filter-group"><span class="filter-label">维度</span>${fields}</div>
     ${clear}
   </div>`;
 }
@@ -587,13 +554,12 @@ function setTab(t) {
   render();
 }
 function setFilter(k, v) { state[k] = state[k] === v ? '' : v; renderFilters(); render(); }
-function clearFilters() { state.category = ''; state.field = ''; state.role = ''; renderFilters(); render(); }
+function clearFilters() { state.category = ''; state.field = ''; renderFilters(); render(); }
 function setProduct(id) { state.product = id; render(); }
 
 function render() {
   if (!D) return;
   if (state.tab === 'latest') renderLatest();
-  else if (state.tab === 'trend') renderTrend();
   else renderProducts();
 }
 
