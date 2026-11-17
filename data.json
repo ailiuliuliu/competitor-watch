@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-17T09:08:28.375Z",
+    "generated_at": "2026-11-17T10:05:23.993Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,7 +26,7 @@
     },
     "counts": {
       "products": 16,
-      "events": 129,
+      "events": 128,
       "current": 125,
       "anchors": 46
     },
@@ -4309,39 +4309,6 @@
         {
           "label": "渠道",
           "value": "Amazon product detail page / Alexa for Shopping"
-        }
-      ],
-      "sources": [
-        {
-          "title": "Alexa for Shopping价格历史功能与11月16日修订",
-          "url": "https://www.aboutamazon.com/news/retail/how-to-check-amazon-price-history"
-        }
-      ]
-    },
-    {
-      "id": "f0f99479ccb5fc8a",
-      "product_id": "amazon",
-      "field": "business",
-      "field_label": "经营与规模",
-      "kind": "新发现",
-      "important": true,
-      "date": "2026-11-16",
-      "date_role": "announced",
-      "effective_at": null,
-      "old": null,
-      "fact": "Amazon于2026年11月16日修订的官方文章称，2026年全球超过1亿客户使用过价格历史功能，使用次数达数亿次；这是价格历史功能使用量，不等于Alexa for Shopping独立活跃用户、归因订单或利润。",
-      "context": [
-        {
-          "label": "指标",
-          "value": "price history use"
-        },
-        {
-          "label": "周期",
-          "value": "2026 to publication update"
-        },
-        {
-          "label": "范围",
-          "value": "global Amazon price history feature, not Alexa-only"
         }
       ],
       "sources": [

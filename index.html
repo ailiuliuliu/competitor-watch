@@ -155,6 +155,11 @@ body {
   font-size: 12px; color: rgba(255,255,255,0.5);
 }
 .tc-fact { font-size: 13px; line-height: 1.8; color: rgba(200,216,232,0.85); }
+.tc-item + .tc-item { margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.09); }
+.tc-dim {
+  font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em;
+  color: var(--muted); margin-bottom: 4px;
+}
 .tc-old {
   margin-top: 8px; padding: 7px 11px; border-radius: 8px;
   background: rgba(220,38,38,0.08); border-left: 2px solid rgba(220,100,100,0.3);
@@ -403,11 +408,73 @@ function timeline(items) {
 }
 
 /* ── 视图 1：最新动态 ── */
+const ROLE_RANK = { announced: 0, effective: 1, recorded: 2 };
+
+// 同一天、来源 URL 有交集的记录算同一次公告，并成一张故事卡。
+// 只看日期与来源链接这些公开结构，不引入任何内部重要性判断。
+function buildStories(events) {
+  const buckets = new Map();
+  events.forEach((e) => {
+    const k = e.product_id + '·' + (e.date || '');
+    if (!buckets.has(k)) buckets.set(k, []);
+    buckets.get(k).push(e);
+  });
+  const stories = [];
+  buckets.forEach((evs) => {
+    const urlsets = evs.map((e) => new Set(e.sources.map((s) => s.url)));
+    const parent = evs.map((_, i) => i);
+    const find = (x) => { while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; } return x; };
+    for (let i = 0; i < evs.length; i += 1) {
+      for (let j = i + 1; j < evs.length; j += 1) {
+        if ([...urlsets[i]].some((u) => urlsets[j].has(u))) parent[find(i)] = find(j);
+      }
+    }
+    const groups = new Map();
+    evs.forEach((e, i) => {
+      const root = find(i);
+      if (!groups.has(root)) groups.set(root, []);
+      groups.get(root).push(e);
+    });
+    groups.forEach((items) => {
+      const sources = [];
+      const seenUrl = new Set();
+      items.forEach((e) => e.sources.forEach((s) => {
+        if (!seenUrl.has(s.url)) { seenUrl.add(s.url); sources.push(s); }
+      }));
+      stories.push({
+        product_id: items[0].product_id,
+        date: items[0].date,
+        date_role: items.reduce(
+          (r, e) => ((ROLE_RANK[e.date_role] ?? 9) < (ROLE_RANK[r] ?? 9) ? e.date_role : r),
+          items[0].date_role,
+        ),
+        items,
+        sources,
+      });
+    });
+  });
+  return stories.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+}
+
+// 前 n 个坑先保证竞品不重复；竞品凑不满时，再由同竞品的次新故事补位。
+function pickTop(stories, n) {
+  const top = [];
+  const rest = [];
+  stories.forEach((s) => {
+    if (top.length < n && !top.some((t) => t.product_id === s.product_id)) top.push(s);
+    else rest.push(s);
+  });
+  while (top.length < n) {
+    const i = rest.findIndex((s) => top.some((t) => t.product_id === s.product_id));
+    if (i < 0) break;
+    top.push(rest.splice(i, 1)[0]);
+  }
+  return { top: top.sort((a, b) => (b.date || '').localeCompare(a.date || '')), rest };
+}
+
 function renderLatest() {
   const imp = D.events.filter((e) => e.important);
-  const recent = [...imp].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-  const top = recent.slice(0, 5);
-  const rest = recent.slice(5);
+  const picked = pickTop(buildStories(imp), 5);
   const recordedOnly = D.events.filter((e) => e.date_role === 'recorded' && !e.important).length;
 
   document.getElementById('view-latest').innerHTML = `
@@ -422,31 +489,41 @@ function renderLatest() {
       </div>
     </div></div>
 
-    <div class="section-title">最新 5 条重点动态</div>
-    <div class="section-note">按官方公告日排序；公告日缺失时退回生效日或收录日。</div>
-    <div class="top-list">${top.map((e, i) => topCard(e, i)).join('')}</div>
+    <div class="section-title">最新 ${picked.top.length} 条重点动态</div>
+    <div class="section-note">同一天、指向同一来源的多个维度并为一条；不同竞品优先各占一席，凑不满时由次新动态补位。按公告日排序，缺失时退回生效日或收录日。</div>
+    <div class="top-list">${picked.top.map((s, i) => topCard(s, i)).join('')}</div>
 
     <div class="section-title">全部重点动态（${imp.length} 条）</div>
-    <div class="section-note">收录日口径的 ${recordedOnly} 条常规动态不在此列，按竞品查看见「竞品档案」。</div>
-    ${timeline(rest)}
+    <div class="section-note">收录日口径的 ${recordedOnly} 条常规动态不在此列，按竞品查看见「竞品档案」。下方按单条记录展开，不做合并。</div>
+    ${timeline(picked.rest.flatMap((s) => s.items))}
   `;
 }
 
-function topCard(e, i) {
-  const p = prod(e.product_id);
-  const roleLabel = D.meta.date_role_labels[e.date_role] || '收录日';
+function topCard(st, i) {
+  const p = prod(st.product_id);
+  const roleLabel = D.meta.date_role_labels[st.date_role] || '收录日';
+  const ctx = [];
+  const seenKey = new Set();
+  st.items.forEach((e) => (e.context || []).forEach((c) => {
+    const k = `${c.label}=${c.value}`;
+    if (!seenKey.has(k)) { seenKey.add(k); ctx.push(c); }
+  }));
+  const fieldTags = [...new Set(st.items.map((e) => `<span class="ntag ${FIELD_COLOR[e.field] ? 'ntag-' + FIELD_COLOR[e.field] : 'ntag-ghost'}">${esc(e.field_label)}</span>`))];
   return `<div class="top-card" style="border-left-color:${CAT_COLOR[p.category] || 'var(--red)'};">
     <div class="tc-head">
       <span class="tc-rank">0${i + 1}</span>
       <span class="tc-prod">${esc(p.name)}</span>
-      <span class="ntag ${FIELD_COLOR[e.field] ? 'ntag-' + FIELD_COLOR[e.field] : 'ntag-ghost'}">${esc(e.field_label)}</span>
+      ${fieldTags.join('')}
       <span class="ntag ${CAT_TAG[p.category] || 'ntag-ghost'}">${esc(p.category_label)}</span>
-      <span class="tc-date">${fmtDay(e.date)} · ${esc(roleLabel)}</span>
+      <span class="tc-date">${fmtDay(st.date)} · ${esc(roleLabel)}</span>
     </div>
-    <div class="tc-fact">${esc(e.fact)}</div>
-    ${e.old ? `<div class="tc-old">此前：${esc(e.old)}</div>` : ''}
-    ${ctxChips(e.context)}
-    ${srcLinks(e.sources, 'tc-src')}
+    ${st.items.map((e) => `<div class="tc-item">
+      ${st.items.length > 1 ? `<div class="tc-dim">${esc(e.field_label)}</div>` : ''}
+      <div class="tc-fact">${esc(e.fact)}</div>
+      ${e.old ? `<div class="tc-old">此前：${esc(e.old)}</div>` : ''}
+    </div>`).join('')}
+    ${ctxChips(ctx)}
+    ${srcLinks(st.sources, 'tc-src')}
   </div>`;
 }
 
