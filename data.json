@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-17T10:18:30.414Z",
+    "generated_at": "2026-11-18T07:40:10.768Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 128,
-      "current": 124,
+      "events": 132,
+      "current": 128,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -4445,6 +4445,150 @@
           "url": "https://www.aboutamazon.com/news/retail/how-to-check-amazon-price-history"
         }
       ]
+    },
+    {
+      "id": "a2289c6ac957661f",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "date": "2026-11-16",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield Short Drama Studio把剧本拆为多集，建立跨集复用的角色、场景与道具，再按场景和镜头生成视频；支持逐步审阅、Auto-generate all及Agent面板。桌面端早期预览，亦可经Higgsfield MCP在Claude调用。官方博客标11月15日并称已推出，更新日志将Release列为11月16日；实际首次可用时点未独立核实。不同于此前的数字人主持Shorts和商品广告Micro Drama。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Short Drama Studio"
+        },
+        {
+          "label": "渠道",
+          "value": "desktop early preview / Higgsfield MCP in Claude"
+        },
+        {
+          "label": "地区",
+          "value": "not specified"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        },
+        {
+          "title": "Higgsfield Short Drama Studio 11月15日官方介绍",
+          "url": "https://higgsfield.ai/blog/higgsfield-short-drama-studio"
+        }
+      ]
+    },
+    {
+      "id": "4780dbb4d1c19022",
+      "product_id": "higgsfield",
+      "field": "credits",
+      "field_label": "积分",
+      "kind": "新发现",
+      "important": false,
+      "top_eligible": true,
+      "date": "2026-11-15",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Short Drama Studio按操作逐步消耗Higgsfield积分，脚本分析、规划剧集、生成、重生成等按钮展示预计费用；Auto-generate all的最终费用随质量和项目而变，项目Usage显示已花积分。生成供挑选的角色面孔免费。官方未公布统一每集价或失败返分细则，不把一般生成失败退款规则直接套用。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Short Drama Studio"
+        },
+        {
+          "label": "渠道",
+          "value": "desktop early preview / Higgsfield MCP in Claude"
+        },
+        {
+          "label": "地区",
+          "value": "not specified"
+        },
+        {
+          "label": "计费方式",
+          "value": "per action, estimate before generation; exact credits vary"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield Short Drama Studio 11月15日官方介绍",
+          "url": "https://higgsfield.ai/blog/higgsfield-short-drama-studio"
+        }
+      ]
+    },
+    {
+      "id": "97052ec5abb8de49",
+      "product_id": "muse",
+      "field": "regions",
+      "field_label": "上线地区",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "date": "2026-11-17",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Meta于2026年11月17日宣布Muse当天在澳大利亚开放，支持iOS、Android、网页和Mac；早期本地连接器伙伴包括Kogan、MECCA、Officeworks和ShopBack等，购物等连接器体验逐步开放，并非全部伙伴当日可用。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "AU"
+        },
+        {
+          "label": "渠道",
+          "value": "iOS/Android/Web/Mac"
+        },
+        {
+          "label": "可用性",
+          "value": "agent available Nov 17; local connector experiences progressive"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Meta Muse 11月17日澳大利亚开放",
+          "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/"
+        }
+      ]
+    },
+    {
+      "id": "81894abde5b87d0b",
+      "product_id": "muse",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": false,
+      "top_eligible": true,
+      "date": "2026-11-17",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "澳大利亚公告列出Kogan、MECCA、Officeworks购物及ShopBack比价返现等早期本地连接器伙伴；部分体验将在开放后陆续上线。Muse执行购买前会征求用户确认，公告未给这些购物连接器的逐项上线日或成功交易数据。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "AU"
+        },
+        {
+          "label": "渠道",
+          "value": "local connectors"
+        },
+        {
+          "label": "可用性",
+          "value": "progressive rollout"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Meta Muse 11月17日澳大利亚开放",
+          "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/"
+        }
+      ]
     }
   ],
   "current": [
@@ -7483,6 +7627,126 @@
         {
           "title": "Alexa for Shopping价格历史功能与11月16日修订",
           "url": "https://www.aboutamazon.com/news/retail/how-to-check-amazon-price-history"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield Short Drama Studio把剧本拆为多集，建立跨集复用的角色、场景与道具，再按场景和镜头生成视频；支持逐步审阅、Auto-generate all及Agent面板。桌面端早期预览，亦可经Higgsfield MCP在Claude调用。官方博客标11月15日并称已推出，更新日志将Release列为11月16日；实际首次可用时点未独立核实。不同于此前的数字人主持Shorts和商品广告Micro Drama。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Short Drama Studio"
+        },
+        {
+          "label": "渠道",
+          "value": "desktop early preview / Higgsfield MCP in Claude"
+        },
+        {
+          "label": "地区",
+          "value": "not specified"
+        }
+      ],
+      "published_at": "2026-11-16",
+      "last_verified": "2026-11-18",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        },
+        {
+          "title": "Higgsfield Short Drama Studio 11月15日官方介绍",
+          "url": "https://higgsfield.ai/blog/higgsfield-short-drama-studio"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "credits",
+      "field_label": "积分",
+      "value": "Short Drama Studio按操作逐步消耗Higgsfield积分，脚本分析、规划剧集、生成、重生成等按钮展示预计费用；Auto-generate all的最终费用随质量和项目而变，项目Usage显示已花积分。生成供挑选的角色面孔免费。官方未公布统一每集价或失败返分细则，不把一般生成失败退款规则直接套用。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Short Drama Studio"
+        },
+        {
+          "label": "渠道",
+          "value": "desktop early preview / Higgsfield MCP in Claude"
+        },
+        {
+          "label": "地区",
+          "value": "not specified"
+        },
+        {
+          "label": "计费方式",
+          "value": "per action, estimate before generation; exact credits vary"
+        }
+      ],
+      "published_at": "2026-11-15",
+      "last_verified": "2026-11-18",
+      "sources": [
+        {
+          "title": "Higgsfield Short Drama Studio 11月15日官方介绍",
+          "url": "https://higgsfield.ai/blog/higgsfield-short-drama-studio"
+        }
+      ]
+    },
+    {
+      "product_id": "muse",
+      "field": "regions",
+      "field_label": "上线地区",
+      "value": "Meta于2026年11月17日宣布Muse当天在澳大利亚开放，支持iOS、Android、网页和Mac；早期本地连接器伙伴包括Kogan、MECCA、Officeworks和ShopBack等，购物等连接器体验逐步开放，并非全部伙伴当日可用。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "AU"
+        },
+        {
+          "label": "渠道",
+          "value": "iOS/Android/Web/Mac"
+        },
+        {
+          "label": "可用性",
+          "value": "agent available Nov 17; local connector experiences progressive"
+        }
+      ],
+      "published_at": "2026-11-17",
+      "last_verified": "2026-11-18",
+      "sources": [
+        {
+          "title": "Meta Muse 11月17日澳大利亚开放",
+          "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/"
+        }
+      ]
+    },
+    {
+      "product_id": "muse",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "澳大利亚公告列出Kogan、MECCA、Officeworks购物及ShopBack比价返现等早期本地连接器伙伴；部分体验将在开放后陆续上线。Muse执行购买前会征求用户确认，公告未给这些购物连接器的逐项上线日或成功交易数据。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "AU"
+        },
+        {
+          "label": "渠道",
+          "value": "local connectors"
+        },
+        {
+          "label": "可用性",
+          "value": "progressive rollout"
+        }
+      ],
+      "published_at": "2026-11-17",
+      "last_verified": "2026-11-18",
+      "sources": [
+        {
+          "title": "Meta Muse 11月17日澳大利亚开放",
+          "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/"
         }
       ]
     }
