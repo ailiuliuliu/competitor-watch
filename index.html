@@ -444,6 +444,8 @@ function buildStories(events) {
       stories.push({
         product_id: items[0].product_id,
         date: items[0].date,
+        recorded_at: items.reduce((v, e) => (e.recorded_at || '') > v ? e.recorded_at : v, ''),
+        featured_rank: Math.min(...items.map((e) => e.featured_rank || Infinity)),
         date_role: items.reduce(
           (r, e) => ((ROLE_RANK[e.date_role] ?? 9) < (ROLE_RANK[r] ?? 9) ? e.date_role : r),
           items[0].date_role,
@@ -453,28 +455,27 @@ function buildStories(events) {
       });
     });
   });
-  return stories.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  return stories.sort((a, b) => {
+    const aFeatured = Number.isFinite(a.featured_rank);
+    const bFeatured = Number.isFinite(b.featured_rank);
+    if (aFeatured !== bFeatured) return aFeatured ? -1 : 1;
+    if (aFeatured) {
+      const byScan = (b.recorded_at || '').localeCompare(a.recorded_at || '');
+      if (byScan) return byScan;
+      if (a.featured_rank !== b.featured_rank) return a.featured_rank - b.featured_rank;
+    }
+    return (b.date || '').localeCompare(a.date || '');
+  });
 }
 
-// 前 n 个坑先保证竞品不重复；竞品凑不满时，再由同竞品的次新故事补位。
+// 新规则按扫描轮次和评分名次排序，首页仅展示前三条公告。
 function pickTop(stories, n) {
-  const top = [];
-  const rest = [];
-  stories.forEach((s) => {
-    if (top.length < n && !top.some((t) => t.product_id === s.product_id)) top.push(s);
-    else rest.push(s);
-  });
-  while (top.length < n) {
-    const i = rest.findIndex((s) => top.some((t) => t.product_id === s.product_id));
-    if (i < 0) break;
-    top.push(rest.splice(i, 1)[0]);
-  }
-  return top.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  return stories.slice(0, n);
 }
 
 function renderLatest() {
   const imp = D.events.filter((e) => e.important);
-  const top = pickTop(buildStories(imp.filter((e) => e.top_eligible !== false)), 5);
+  const top = pickTop(buildStories(imp.filter((e) => e.top_eligible !== false)), 3);
   const shown = new Set(top.flatMap((s) => s.items.map((e) => e.id)));
   const archive = imp.filter((e) => !shown.has(e.id));
   const recordedOnly = D.events.filter((e) => e.date_role === 'recorded' && !e.important).length;
@@ -491,8 +492,8 @@ function renderLatest() {
       </div>
     </div></div>
 
-    <div class="section-title">最新 ${top.length} 条重点动态</div>
-    <div class="section-note">同一天、指向同一来源的多个维度并为一条；不同竞品优先各占一席，凑不满时由次新动态补位。按公告日排序，缺失时退回生效日或收录日。</div>
+    <div class="section-title">重要新闻 · 最新 ${top.length} 条</div>
+    <div class="section-note">2026-11-20起，每轮从已核实动态中按业务相关性、变化强度和影响范围评分，最多选3条；优先展示最近扫描轮次的入选新闻。旧记录保留原分级。同一天、同来源的多个维度并为一条；卡片日期优先显示公告日，缺失时退回生效日或收录日。</div>
     <div class="top-list">${top.map((s, i) => topCard(s, i)).join('')}</div>
 
     <div class="section-title">全部重点动态（${imp.length} 条）</div>
