@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-19T11:43:44.240Z",
+    "generated_at": "2026-11-19T12:32:54.251Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 130,
-      "current": 128,
+      "events": 137,
+      "current": 133,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -614,6 +614,42 @@
       ]
     },
     {
+      "id": "b9771821c9a9705a",
+      "product_id": "oiioii",
+      "field": "pricing",
+      "field_label": "定价",
+      "kind": "基线收录",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-10-31",
+      "date": "2026-10-31",
+      "date_role": "recorded",
+      "effective_at": null,
+      "old": null,
+      "fact": "OiiOii 提供 BASE、STAR、PRO、APEX 四档个人订阅及团队档；个人订阅可按月、季、年付费，按套餐发放积分，另设每日签到赠分。",
+      "context": [
+        {
+          "label": "语言版本",
+          "value": "英文版官网"
+        },
+        {
+          "label": "计费方式",
+          "value": "display_only"
+        },
+        {
+          "label": "套餐",
+          "value": "BASE"
+        }
+      ],
+      "sources": [
+        {
+          "title": "OiiOii 价格与积分 FAQ",
+          "url": "https://www.oiioii.ai/price"
+        }
+      ]
+    },
+    {
       "id": "3a307b45d33d6f4f",
       "product_id": "oiioii",
       "field": "credits",
@@ -775,6 +811,65 @@
       ]
     },
     {
+      "id": "f7fd9d36d2ee6da0",
+      "product_id": "jogg",
+      "field": "pricing",
+      "field_label": "定价",
+      "kind": "基线收录",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-10-31",
+      "date": "2026-10-31",
+      "date_role": "recorded",
+      "effective_at": null,
+      "old": null,
+      "fact": "JoggAI Starter 提供月付和年付订阅；年付积分一次发放，付费方案还包括 Creator、Team 与企业档。",
+      "context": [
+        {
+          "label": "语言版本",
+          "value": "USD公开页，地区未明确"
+        },
+        {
+          "label": "计费方式",
+          "value": "annual"
+        },
+        {
+          "label": "套餐",
+          "value": "Starter"
+        }
+      ],
+      "sources": [
+        {
+          "title": "JoggAI 价格页",
+          "url": "https://www.jogg.ai/pricing/"
+        }
+      ]
+    },
+    {
+      "id": "17d5d15f5a902f93",
+      "product_id": "jogg",
+      "field": "free",
+      "field_label": "免费额度",
+      "kind": "基线收录",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-10-31",
+      "date": "2026-10-31",
+      "date_role": "recorded",
+      "effective_at": null,
+      "old": null,
+      "fact": "JoggAI 免费档提供有有效期的赠送积分，Web、API、MCP 与插件共用账户积分。",
+      "context": [],
+      "sources": [
+        {
+          "title": "JoggAI 价格页",
+          "url": "https://www.jogg.ai/pricing/"
+        }
+      ]
+    },
+    {
       "id": "a6c271f7dadc2580",
       "product_id": "genspark",
       "field": "position",
@@ -848,6 +943,65 @@
         {
           "title": "Genspark 会员规则",
           "url": "https://www.genspark.ai/helpcenter/membership-plans"
+        }
+      ]
+    },
+    {
+      "id": "0e5b6ffd5c3baf02",
+      "product_id": "genspark",
+      "field": "pricing",
+      "field_label": "定价",
+      "kind": "基线收录",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-10-31",
+      "date": "2026-10-31",
+      "date_role": "recorded",
+      "effective_at": null,
+      "old": null,
+      "fact": "Genspark 提供 Free、Plus、Pro 分层；Plus 和 Pro 按月配置订阅积分，可选月付或年付，年付积分仍按月发放。",
+      "context": [
+        {
+          "label": "语言版本",
+          "value": "USD官网"
+        },
+        {
+          "label": "计费方式",
+          "value": "monthly"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Genspark 会员规则",
+          "url": "https://www.genspark.ai/helpcenter/membership-plans"
+        }
+      ]
+    },
+    {
+      "id": "65c5bcef8fd6d907",
+      "product_id": "genspark",
+      "field": "free",
+      "field_label": "免费额度",
+      "kind": "基线收录",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-10-31",
+      "date": "2026-10-31",
+      "date_role": "recorded",
+      "effective_at": null,
+      "old": null,
+      "fact": "Genspark 免费档每日补充积分，但设账户终身免费额度；达到上限后停止每日补充，剩余积分仍可使用。",
+      "context": [],
+      "sources": [
+        {
+          "title": "Genspark 会员规则",
+          "url": "https://www.genspark.ai/helpcenter/membership-plans"
+        },
+        {
+          "title": "Genspark 积分规则",
+          "url": "https://www.genspark.ai/helpcenter/credits-guide"
         }
       ]
     },
@@ -944,6 +1098,29 @@
         {
           "title": "Manus 积分规则",
           "url": "https://manus.im/help/credits"
+        }
+      ]
+    },
+    {
+      "id": "0067d01cb16d0f35",
+      "product_id": "manus",
+      "field": "free",
+      "field_label": "免费额度",
+      "kind": "基线收录",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-10-31",
+      "date": "2026-10-31",
+      "date_role": "recorded",
+      "effective_at": null,
+      "old": null,
+      "fact": "Manus 免费账户注册赠送 1000 积分，此后每日刷新 300 积分；桌面端与网页端共用账户余额。",
+      "context": [],
+      "sources": [
+        {
+          "title": "Manus 桌面端积分说明",
+          "url": "https://help.manus.im/en/articles/14134826-understanding-credit-consumption-in-the-manus-desktop-app"
         }
       ]
     },
@@ -2570,6 +2747,33 @@
         {
           "title": "Amazon 11月4日官方新闻汇总（动态页面）",
           "url": "https://www.aboutamazon.com/news/company-news/amazon-news-today-top-stories-company"
+        }
+      ]
+    },
+    {
+      "id": "6823be8a900a6779",
+      "product_id": "manus",
+      "field": "free",
+      "field_label": "免费额度",
+      "kind": "字段变化",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-11-07",
+      "date": "2026-11-07",
+      "date_role": "recorded",
+      "effective_at": null,
+      "old": "Manus 免费账户注册赠送 1000 积分，此后每日刷新 300 积分；桌面端与网页端共用账户余额。",
+      "fact": "Manus 免费账户注册赠送 1000 积分，此后每日刷新 300 积分；其中每日刷新积分每月最多消耗 1500 分，且仅可用于 Manus 2.0 lite。",
+      "context": [],
+      "sources": [
+        {
+          "title": "Manus 桌面端积分说明",
+          "url": "https://help.manus.im/en/articles/14134826-understanding-credit-consumption-in-the-manus-desktop-app"
+        },
+        {
+          "title": "Manus积分消费与每日刷新积分月上限",
+          "url": "https://help.manus.im/en/articles/11711097-what-are-the-rules-for-credits-consumption-and-how-can-i-obtain-them"
         }
       ]
     },
@@ -4880,6 +5084,34 @@
     },
     {
       "product_id": "oiioii",
+      "field": "pricing",
+      "field_label": "定价",
+      "value": "截至 2026-11-19，英文版官网 BASE 月付为 20 美元/月（黑色星期五促销价，原价 25 美元/月），每月立得 1000 积分，全勤签到另得 310 积分。",
+      "context": [
+        {
+          "label": "语言版本",
+          "value": "英文版官网"
+        },
+        {
+          "label": "计费方式",
+          "value": "display_only"
+        },
+        {
+          "label": "套餐",
+          "value": "BASE"
+        }
+      ],
+      "published_at": null,
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "OiiOii 价格与积分 FAQ",
+          "url": "https://www.oiioii.ai/price"
+        }
+      ]
+    },
+    {
+      "product_id": "oiioii",
       "field": "credits",
       "field_label": "积分",
       "value": "BASE 展示 1000 即时积分与满签到最多 310 积分；签到部分需满足条件。",
@@ -4984,6 +5216,49 @@
       ]
     },
     {
+      "product_id": "jogg",
+      "field": "pricing",
+      "field_label": "定价",
+      "value": "截至 2026-11-19，英文版官网 Starter 月付为 29 美元/月；年付优惠价 288 美元/年（折合 24 美元/月，页面标注比月付省 17%），全年 144,000 积分一次发放。",
+      "context": [
+        {
+          "label": "语言版本",
+          "value": "USD公开页，地区未明确"
+        },
+        {
+          "label": "计费方式",
+          "value": "annual"
+        },
+        {
+          "label": "套餐",
+          "value": "Starter"
+        }
+      ],
+      "published_at": null,
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "JoggAI 价格页",
+          "url": "https://www.jogg.ai/pricing/"
+        }
+      ]
+    },
+    {
+      "product_id": "jogg",
+      "field": "free",
+      "field_label": "免费额度",
+      "value": "截至 2026-11-19，英文版官网新用户一次性赠送 200 积分，有效期 31 天；Web、API、MCP 与插件共用账户积分。",
+      "context": [],
+      "published_at": null,
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "JoggAI 价格页",
+          "url": "https://www.jogg.ai/pricing/"
+        }
+      ]
+    },
+    {
       "product_id": "genspark",
       "field": "position",
       "field_label": "产品定位",
@@ -5033,6 +5308,49 @@
         {
           "title": "Genspark 会员规则",
           "url": "https://www.genspark.ai/helpcenter/membership-plans"
+        }
+      ]
+    },
+    {
+      "product_id": "genspark",
+      "field": "pricing",
+      "field_label": "定价",
+      "value": "截至 2026-11-19，英文版官网 Plus 月付 24.99 美元/月、每月 10,000 积分，年付优惠折合 19.99 美元/月；Pro 月付 249.99 美元/月、每月 125,000 积分，年付优惠折合 199.99 美元/月。",
+      "context": [
+        {
+          "label": "语言版本",
+          "value": "USD官网"
+        },
+        {
+          "label": "计费方式",
+          "value": "monthly"
+        }
+      ],
+      "published_at": null,
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "Genspark 会员规则",
+          "url": "https://www.genspark.ai/helpcenter/membership-plans"
+        }
+      ]
+    },
+    {
+      "product_id": "genspark",
+      "field": "free",
+      "field_label": "免费额度",
+      "value": "截至 2026-11-19，英文版帮助中心显示免费账户每日补充 100 积分；达到未公布数值的账户终身免费额度后停止每日补充，已有余额仍可使用。",
+      "context": [],
+      "published_at": null,
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "Genspark 会员规则",
+          "url": "https://www.genspark.ai/helpcenter/membership-plans"
+        },
+        {
+          "title": "Genspark 积分规则",
+          "url": "https://www.genspark.ai/helpcenter/credits-guide"
         }
       ]
     },
