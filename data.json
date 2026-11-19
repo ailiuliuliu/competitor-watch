@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-18T07:40:10.768Z",
+    "generated_at": "2026-11-19T01:11:11.656Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 132,
-      "current": 128,
+      "events": 137,
+      "current": 133,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -4589,6 +4589,188 @@
           "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/"
         }
       ]
+    },
+    {
+      "id": "786fc40b5463797e",
+      "product_id": "muse",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "date": "2026-11-18",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Meta在2026年11月18日宣布Loblaw成为Muse首个加拿大零售连接器伙伴。加拿大用户可通过参与的Loblaw旗下商家在Muse内规划餐食、组建购物篮并结账；Muse可记住品牌偏好及食物过敏信息。公告未列全部参与商家、覆盖批次或实际交易数据。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "CA"
+        },
+        {
+          "label": "渠道",
+          "value": "Muse / Loblaw partner connector"
+        },
+        {
+          "label": "可用性",
+          "value": "participating Loblaw banners; exact cohort not specified"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Meta Muse 加拿大 Loblaw 购物连接器",
+          "url": "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse/"
+        }
+      ]
+    },
+    {
+      "id": "53112bda9b5edb78",
+      "product_id": "google-shopping-ai",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "date": "2026-11-17",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Google于2026年11月17日宣布Gemini推出Task模式，包含商品比较、Google Pay购买和通过Instacart连接器加购等购物任务；购买前可要求确认或预先授权，支持设置支出上限。一般Task更新正向美国、日本、韩国、加拿大、澳大利亚和印度免费逐步开放；高级功能从美国开始。公告未逐国列明购物购买功能的可用性，不能将六国视作全链路结账覆盖；UCP接入Gemini仍为未来计划。",
+      "context": [
+        {
+          "label": "产品线",
+          "value": "Gemini Tasks shopping / AP2 payments"
+        },
+        {
+          "label": "地区",
+          "value": "general Task rollout US/JP/KR/CA/AU/IN; advanced US first"
+        },
+        {
+          "label": "渠道",
+          "value": "Gemini app; US also text/email"
+        },
+        {
+          "label": "可用性",
+          "value": "rolling rollout; shopping checkout by country not fully specified"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Google Gemini Tasks 购物执行",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+        }
+      ]
+    },
+    {
+      "id": "9c338781295054c6",
+      "product_id": "higgsfield",
+      "field": "credits",
+      "field_label": "积分",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "date": "2026-11-18",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield于11月18日介绍与Anthropic的Linked Billing beta：Team、Scale、Enterprise客户可连接Claude Platform组织，Supercomputer中受支持的Claude API用量直接由Anthropic向组织计费；图片与视频生成继续消耗Higgsfield积分。若Anthropic月度额度用尽或连接停用，Supercomputer会自动改用Higgsfield积分。个人套餐不适用；公告称Anthropic于11月17日宣布该合作。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Supercomputer / Claude linked billing beta"
+        },
+        {
+          "label": "套餐",
+          "value": "Team, Scale, Enterprise"
+        },
+        {
+          "label": "计费方式",
+          "value": "Claude API direct Anthropic; image/video Higgsfield credits; fallback to credits"
+        },
+        {
+          "label": "地区",
+          "value": "not specified"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield × Anthropic linked billing",
+          "url": "https://higgsfield.ai/blog/higgsfield-anthropic-linked-billing"
+        }
+      ]
+    },
+    {
+      "id": "a7b51a87f8576827",
+      "product_id": "rakuten",
+      "field": "business",
+      "field_label": "经营与规模",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "date": "2026-11-13",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Rakuten于2026年11月13日Q3业绩简报第56页披露：乐天市场的Decision Model结合下一代搜索引擎，在2026年10月相对生产基线的A/B测试中转化率提升32.3%（p<0.01）。模型先检索最多50个候选，再结合商品图、描述和完整上下文判断与需求是否匹配。该数字是两项技术的组合效果，不能单独归因于Decision Model、购物Agent或当作全站转化率提升。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "JP"
+        },
+        {
+          "label": "场景",
+          "value": "Rakuten Ichiba search / Decision Model + Next-Generation Search Engine"
+        },
+        {
+          "label": "指标",
+          "value": "A/B conversion rate lift"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Rakuten FY2026 Q3 简报：Ichiba AI",
+          "url": "https://global.rakuten.com/corp/investors/assets/doc/documents/26Q3MAINPPT_S_E.pdf"
+        }
+      ]
+    },
+    {
+      "id": "2f50f76dc1ea4de9",
+      "product_id": "rakuten",
+      "field": "business",
+      "field_label": "经营与规模",
+      "kind": "新发现",
+      "important": false,
+      "top_eligible": true,
+      "date": "2026-11-13",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "同一Q3简报第57页披露：乐天市场AI个性化发现推荐所归因GMS在2026年1月至9月约增长163倍；展示的点击后口径转化率从3.44%升至6.38%（+2.94个百分点）。归因条件为点击发现推荐详情页后30天内在该店购买任意商品。该时间序列没有对照组，不能解释为AI推荐的因果增量或整个乐天市场的转化率。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "JP"
+        },
+        {
+          "label": "场景",
+          "value": "Rakuten Ichiba AI-personalized discovery feed"
+        },
+        {
+          "label": "指标",
+          "value": "attributed GMS and post-click conversion"
+        },
+        {
+          "label": "周期",
+          "value": "2026-01/2026-09"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Rakuten FY2026 Q3 简报：Ichiba AI",
+          "url": "https://global.rakuten.com/corp/investors/assets/doc/documents/26Q3MAINPPT_S_E.pdf"
+        }
+      ]
     }
   ],
   "current": [
@@ -7747,6 +7929,158 @@
         {
           "title": "Meta Muse 11月17日澳大利亚开放",
           "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/"
+        }
+      ]
+    },
+    {
+      "product_id": "muse",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Meta在2026年11月18日宣布Loblaw成为Muse首个加拿大零售连接器伙伴。加拿大用户可通过参与的Loblaw旗下商家在Muse内规划餐食、组建购物篮并结账；Muse可记住品牌偏好及食物过敏信息。公告未列全部参与商家、覆盖批次或实际交易数据。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "CA"
+        },
+        {
+          "label": "渠道",
+          "value": "Muse / Loblaw partner connector"
+        },
+        {
+          "label": "可用性",
+          "value": "participating Loblaw banners; exact cohort not specified"
+        }
+      ],
+      "published_at": "2026-11-18",
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "Meta Muse 加拿大 Loblaw 购物连接器",
+          "url": "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse/"
+        }
+      ]
+    },
+    {
+      "product_id": "google-shopping-ai",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Google于2026年11月17日宣布Gemini推出Task模式，包含商品比较、Google Pay购买和通过Instacart连接器加购等购物任务；购买前可要求确认或预先授权，支持设置支出上限。一般Task更新正向美国、日本、韩国、加拿大、澳大利亚和印度免费逐步开放；高级功能从美国开始。公告未逐国列明购物购买功能的可用性，不能将六国视作全链路结账覆盖；UCP接入Gemini仍为未来计划。",
+      "context": [
+        {
+          "label": "产品线",
+          "value": "Gemini Tasks shopping / AP2 payments"
+        },
+        {
+          "label": "地区",
+          "value": "general Task rollout US/JP/KR/CA/AU/IN; advanced US first"
+        },
+        {
+          "label": "渠道",
+          "value": "Gemini app; US also text/email"
+        },
+        {
+          "label": "可用性",
+          "value": "rolling rollout; shopping checkout by country not fully specified"
+        }
+      ],
+      "published_at": "2026-11-17",
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "Google Gemini Tasks 购物执行",
+          "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "credits",
+      "field_label": "积分",
+      "value": "Higgsfield于11月18日介绍与Anthropic的Linked Billing beta：Team、Scale、Enterprise客户可连接Claude Platform组织，Supercomputer中受支持的Claude API用量直接由Anthropic向组织计费；图片与视频生成继续消耗Higgsfield积分。若Anthropic月度额度用尽或连接停用，Supercomputer会自动改用Higgsfield积分。个人套餐不适用；公告称Anthropic于11月17日宣布该合作。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Supercomputer / Claude linked billing beta"
+        },
+        {
+          "label": "套餐",
+          "value": "Team, Scale, Enterprise"
+        },
+        {
+          "label": "计费方式",
+          "value": "Claude API direct Anthropic; image/video Higgsfield credits; fallback to credits"
+        },
+        {
+          "label": "地区",
+          "value": "not specified"
+        }
+      ],
+      "published_at": "2026-11-18",
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "Higgsfield × Anthropic linked billing",
+          "url": "https://higgsfield.ai/blog/higgsfield-anthropic-linked-billing"
+        }
+      ]
+    },
+    {
+      "product_id": "rakuten",
+      "field": "business",
+      "field_label": "经营与规模",
+      "value": "Rakuten于2026年11月13日Q3业绩简报第56页披露：乐天市场的Decision Model结合下一代搜索引擎，在2026年10月相对生产基线的A/B测试中转化率提升32.3%（p<0.01）。模型先检索最多50个候选，再结合商品图、描述和完整上下文判断与需求是否匹配。该数字是两项技术的组合效果，不能单独归因于Decision Model、购物Agent或当作全站转化率提升。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "JP"
+        },
+        {
+          "label": "场景",
+          "value": "Rakuten Ichiba search / Decision Model + Next-Generation Search Engine"
+        },
+        {
+          "label": "指标",
+          "value": "A/B conversion rate lift"
+        }
+      ],
+      "published_at": "2026-11-13",
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "Rakuten FY2026 Q3 简报：Ichiba AI",
+          "url": "https://global.rakuten.com/corp/investors/assets/doc/documents/26Q3MAINPPT_S_E.pdf"
+        }
+      ]
+    },
+    {
+      "product_id": "rakuten",
+      "field": "business",
+      "field_label": "经营与规模",
+      "value": "同一Q3简报第57页披露：乐天市场AI个性化发现推荐所归因GMS在2026年1月至9月约增长163倍；展示的点击后口径转化率从3.44%升至6.38%（+2.94个百分点）。归因条件为点击发现推荐详情页后30天内在该店购买任意商品。该时间序列没有对照组，不能解释为AI推荐的因果增量或整个乐天市场的转化率。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "JP"
+        },
+        {
+          "label": "场景",
+          "value": "Rakuten Ichiba AI-personalized discovery feed"
+        },
+        {
+          "label": "指标",
+          "value": "attributed GMS and post-click conversion"
+        },
+        {
+          "label": "周期",
+          "value": "2026-01/2026-09"
+        }
+      ],
+      "published_at": "2026-11-13",
+      "last_verified": "2026-11-19",
+      "sources": [
+        {
+          "title": "Rakuten FY2026 Q3 简报：Ichiba AI",
+          "url": "https://global.rakuten.com/corp/investors/assets/doc/documents/26Q3MAINPPT_S_E.pdf"
         }
       ]
     }
