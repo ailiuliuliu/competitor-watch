@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-19T12:32:54.251Z",
+    "generated_at": "2026-11-20T00:10:10.070Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 137,
-      "current": 133,
+      "events": 138,
+      "current": 134,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -5045,6 +5045,42 @@
           "url": "https://global.rakuten.com/corp/investors/assets/doc/documents/26Q3MAINPPT_S_E.pdf"
         }
       ]
+    },
+    {
+      "id": "51d7cce4df9e02bb",
+      "product_id": "sparky",
+      "field": "business",
+      "field_label": "经营与规模",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 1,
+      "recorded_at": "2026-11-20",
+      "date": "2026-11-19",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Walmart于2026年11月19日发布Q3 FY27财报页，披露美国Sparky使用量同比增长129%；页面未给出绝对使用量、独立用户数、统计方法或归因成交增量。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "US"
+        },
+        {
+          "label": "周期",
+          "value": "Walmart Q3 FY27"
+        },
+        {
+          "label": "指标",
+          "value": "Sparky usage, YoY"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Walmart Q3 FY27 财报：美国 Sparky 使用量同比",
+          "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings"
+        }
+      ]
     }
   ],
   "current": [
@@ -8355,6 +8391,34 @@
         {
           "title": "Rakuten FY2026 Q3 简报：Ichiba AI",
           "url": "https://global.rakuten.com/corp/investors/assets/doc/documents/26Q3MAINPPT_S_E.pdf"
+        }
+      ]
+    },
+    {
+      "product_id": "sparky",
+      "field": "business",
+      "field_label": "经营与规模",
+      "value": "Walmart于2026年11月19日发布Q3 FY27财报页，披露美国Sparky使用量同比增长129%；页面未给出绝对使用量、独立用户数、统计方法或归因成交增量。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "US"
+        },
+        {
+          "label": "周期",
+          "value": "Walmart Q3 FY27"
+        },
+        {
+          "label": "指标",
+          "value": "Sparky usage, YoY"
+        }
+      ],
+      "published_at": "2026-11-19",
+      "last_verified": "2026-11-20",
+      "sources": [
+        {
+          "title": "Walmart Q3 FY27 财报：美国 Sparky 使用量同比",
+          "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings"
         }
       ]
     }
