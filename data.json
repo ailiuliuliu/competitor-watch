@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-21T00:06:39.871Z",
+    "generated_at": "2026-11-21T03:55:07.210Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 138,
-      "current": 134,
+      "events": 140,
+      "current": 136,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -5081,6 +5081,82 @@
           "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings"
         }
       ]
+    },
+    {
+      "id": "1b197b4c24f2ae83",
+      "product_id": "higgsfield",
+      "field": "credits",
+      "field_label": "积分",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 1,
+      "recorded_at": "2026-11-21",
+      "date": "2026-11-20",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield于2026年11月20日公布限时Black Friday Market，独立于订阅计划折扣：视频Bonus Seconds按120/240/600秒售卖，购买后72小时失效，使用时按视频时长扣秒、不扣积分；100至15,000积分的积分包有效期90天；另有1/3/7天的指定图像模型无限生成及订阅积分延续一个月等附加项。活动截至11月30日，折扣最高75%；各卡片实际价格及账号资格以购买页为准。",
+      "context": [
+        {
+          "label": "报价",
+          "value": "Black Friday Market"
+        },
+        {
+          "label": "渠道",
+          "value": "web add-on store"
+        },
+        {
+          "label": "地区",
+          "value": "未注明"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield Black Friday Market 积分包与时长包",
+          "url": "https://higgsfield.ai/blog/higgsfield-black-friday-market"
+        }
+      ]
+    },
+    {
+      "id": "a5fbbc44b4aa8c4f",
+      "product_id": "google-shopping-ai",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 2,
+      "recorded_at": "2026-11-21",
+      "date": "2026-11-20",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Google于2026年11月20日宣布在美国的Search及Gemini App逐步开放Albertsons、Safeway、Shaw’s、Target等杂货Connected Apps，用户可借助这些连接器组建订单并完成结账；该流程基于Universal Commerce Protocol。公告未逐一列明用户批次、商家交易覆盖或实际成交效果，不能外推至其他国家。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "US"
+        },
+        {
+          "label": "产品线",
+          "value": "Search / Gemini Connected Apps grocery"
+        },
+        {
+          "label": "渠道",
+          "value": "Search and Gemini app"
+        },
+        {
+          "label": "可用性",
+          "value": "rolling rollout"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Google Search 与 Gemini 美国杂货 Connected Apps",
+          "url": "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/"
+        }
+      ]
     }
   ],
   "current": [
@@ -8419,6 +8495,66 @@
         {
           "title": "Walmart Q3 FY27 财报：美国 Sparky 使用量同比",
           "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "credits",
+      "field_label": "积分",
+      "value": "Higgsfield于2026年11月20日公布限时Black Friday Market，独立于订阅计划折扣：视频Bonus Seconds按120/240/600秒售卖，购买后72小时失效，使用时按视频时长扣秒、不扣积分；100至15,000积分的积分包有效期90天；另有1/3/7天的指定图像模型无限生成及订阅积分延续一个月等附加项。活动截至11月30日，折扣最高75%；各卡片实际价格及账号资格以购买页为准。",
+      "context": [
+        {
+          "label": "报价",
+          "value": "Black Friday Market"
+        },
+        {
+          "label": "渠道",
+          "value": "web add-on store"
+        },
+        {
+          "label": "地区",
+          "value": "未注明"
+        }
+      ],
+      "published_at": "2026-11-20",
+      "last_verified": "2026-11-21",
+      "sources": [
+        {
+          "title": "Higgsfield Black Friday Market 积分包与时长包",
+          "url": "https://higgsfield.ai/blog/higgsfield-black-friday-market"
+        }
+      ]
+    },
+    {
+      "product_id": "google-shopping-ai",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Google于2026年11月20日宣布在美国的Search及Gemini App逐步开放Albertsons、Safeway、Shaw’s、Target等杂货Connected Apps，用户可借助这些连接器组建订单并完成结账；该流程基于Universal Commerce Protocol。公告未逐一列明用户批次、商家交易覆盖或实际成交效果，不能外推至其他国家。",
+      "context": [
+        {
+          "label": "地区",
+          "value": "US"
+        },
+        {
+          "label": "产品线",
+          "value": "Search / Gemini Connected Apps grocery"
+        },
+        {
+          "label": "渠道",
+          "value": "Search and Gemini app"
+        },
+        {
+          "label": "可用性",
+          "value": "rolling rollout"
+        }
+      ],
+      "published_at": "2026-11-20",
+      "last_verified": "2026-11-21",
+      "sources": [
+        {
+          "title": "Google Search 与 Gemini 美国杂货 Connected Apps",
+          "url": "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/"
         }
       ]
     }
