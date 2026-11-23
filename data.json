@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-23T01:59:16.772Z",
+    "generated_at": "2026-11-23T02:37:59.336Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 140,
-      "current": 136,
+      "events": 146,
+      "current": 142,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -5157,6 +5157,222 @@
           "url": "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/"
         }
       ]
+    },
+    {
+      "id": "2d78b29c2d3b6fc2",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 1,
+      "recorded_at": "2026-11-23",
+      "date": "2026-11-20",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield于11月20日发布Editing Room：用户上传已有视频，在时间轴选定片段后可局部替换人物、角度、地点、镜头运动或灯光；可叠加编辑、对比原片并导出。官方未在该日志说明地区、套餐资格及每步积分。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Editing Room"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "id": "c56fefca7ec6fc05",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-11-23",
+      "date": "2026-11-19",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield于11月19日发布Property Studio：由平面图生成带家具的3D布局，再制作可编辑脚本、配音和视频导览；支持最多20张室内参考图。定位房地产中介、开发商和室内设计师，官网日志未说明地区与计费。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Property Studio"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "id": "463b81bf47412f17",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 2,
+      "recorded_at": "2026-11-23",
+      "date": "2026-11-19",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield于11月19日接入Ideogram 4.6图像模型，支持逐步局部编辑、最多5张参考图、2K或原生4K输出，并提供不同质量档。官方将商品颜色、材质和背景替换列为使用示例；具体积分与地区未在日志说明。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Ideogram 4.6"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "id": "b4c1b09809713d10",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-11-23",
+      "date": "2026-11-18",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield于11月18日在Supercomputer中接入Gemini 4 Neon，官方定位为代码、文档、数据分析及多步骤任务模型；可在模型选择器中调用。日志未披露对应积分或地区。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Gemini 4 Neon"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "id": "39c038dc7daeade0",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 3,
+      "recorded_at": "2026-11-23",
+      "date": "2026-11-17",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield于11月17日接入Kling Image 4.0，可通过文字和参考图生成图像；官方列举海报、信息图和商品卡片，并称支持单次同风格最多10张及2K/4K/8K分辨率。相关效果为官方转述厂商主张，未实测。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Kling Image 4.0"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "id": "d9a9ad1ca66438bc",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-11-23",
+      "date": "2026-11-17",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield于11月17日在Supercomputer接入GPT-6.2 Astra与Sol，分别面向复杂项目和日常多步骤任务；这是第三方模型可选项更新，官方日志未给该入口的具体积分或地区。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "GPT-6.2 Astra and Sol"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
     }
   ],
   "current": [
@@ -8555,6 +8771,174 @@
         {
           "title": "Google Search 与 Gemini 美国杂货 Connected Apps",
           "url": "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield于11月20日发布Editing Room：用户上传已有视频，在时间轴选定片段后可局部替换人物、角度、地点、镜头运动或灯光；可叠加编辑、对比原片并导出。官方未在该日志说明地区、套餐资格及每步积分。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Editing Room"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "published_at": "2026-11-20",
+      "last_verified": "2026-11-23",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield于11月19日发布Property Studio：由平面图生成带家具的3D布局，再制作可编辑脚本、配音和视频导览；支持最多20张室内参考图。定位房地产中介、开发商和室内设计师，官网日志未说明地区与计费。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Property Studio"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "published_at": "2026-11-19",
+      "last_verified": "2026-11-23",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield于11月19日接入Ideogram 4.6图像模型，支持逐步局部编辑、最多5张参考图、2K或原生4K输出，并提供不同质量档。官方将商品颜色、材质和背景替换列为使用示例；具体积分与地区未在日志说明。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Ideogram 4.6"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "published_at": "2026-11-19",
+      "last_verified": "2026-11-23",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield于11月18日在Supercomputer中接入Gemini 4 Neon，官方定位为代码、文档、数据分析及多步骤任务模型；可在模型选择器中调用。日志未披露对应积分或地区。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Gemini 4 Neon"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "published_at": "2026-11-18",
+      "last_verified": "2026-11-23",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield于11月17日接入Kling Image 4.0，可通过文字和参考图生成图像；官方列举海报、信息图和商品卡片，并称支持单次同风格最多10张及2K/4K/8K分辨率。相关效果为官方转述厂商主张，未实测。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "Kling Image 4.0"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "published_at": "2026-11-17",
+      "last_verified": "2026-11-23",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield于11月17日在Supercomputer接入GPT-6.2 Astra与Sol，分别面向复杂项目和日常多步骤任务；这是第三方模型可选项更新，官方日志未给该入口的具体积分或地区。",
+      "context": [
+        {
+          "label": "场景",
+          "value": "GPT-6.2 Astra and Sol"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield web"
+        },
+        {
+          "label": "地区",
+          "value": "官方未细分地区"
+        }
+      ],
+      "published_at": "2026-11-17",
+      "last_verified": "2026-11-23",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
         }
       ]
     }
