@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-23T02:37:59.336Z",
+    "generated_at": "2026-11-24T02:30:32.273Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 146,
-      "current": 142,
+      "events": 147,
+      "current": 143,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -5373,6 +5373,50 @@
           "url": "https://higgsfield.ai/creator-hub/changelog"
         }
       ]
+    },
+    {
+      "id": "721e89ff0b5d613d",
+      "product_id": "chatgpt-shopping",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 1,
+      "recorded_at": "2026-11-24",
+      "date": "2026-11-23",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "OpenAI于11月23日说明：ChatGPT聊天标签页中的GPT-6.2，在用户询问商品是否打折时，可主动提出降价时提醒。该版本向Plus、Pro、Business、Enterprise全球逐步推出；Enterprise取决于管理员设置。原文未列出提醒的商家覆盖、触发条件或免费账号可用性。",
+      "context": [
+        {
+          "label": "产品线",
+          "value": "ChatGPT购物对话"
+        },
+        {
+          "label": "模型",
+          "value": "GPT-6.2"
+        },
+        {
+          "label": "渠道",
+          "value": "ChatGPT聊天标签页"
+        },
+        {
+          "label": "订阅",
+          "value": "Plus/Pro/Business/Enterprise"
+        },
+        {
+          "label": "地区",
+          "value": "全球逐步推出；Enterprise受管理员设置限制"
+        }
+      ],
+      "sources": [
+        {
+          "title": "ChatGPT 2026-11-23 更新说明：购物降价提醒示例",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        }
+      ]
     }
   ],
   "current": [
@@ -8939,6 +8983,42 @@
         {
           "title": "Higgsfield 官方更新日志",
           "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
+    },
+    {
+      "product_id": "chatgpt-shopping",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "OpenAI于11月23日说明：ChatGPT聊天标签页中的GPT-6.2，在用户询问商品是否打折时，可主动提出降价时提醒。该版本向Plus、Pro、Business、Enterprise全球逐步推出；Enterprise取决于管理员设置。原文未列出提醒的商家覆盖、触发条件或免费账号可用性。",
+      "context": [
+        {
+          "label": "产品线",
+          "value": "ChatGPT购物对话"
+        },
+        {
+          "label": "模型",
+          "value": "GPT-6.2"
+        },
+        {
+          "label": "渠道",
+          "value": "ChatGPT聊天标签页"
+        },
+        {
+          "label": "订阅",
+          "value": "Plus/Pro/Business/Enterprise"
+        },
+        {
+          "label": "地区",
+          "value": "全球逐步推出；Enterprise受管理员设置限制"
+        }
+      ],
+      "published_at": "2026-11-23",
+      "last_verified": "2026-11-24",
+      "sources": [
+        {
+          "title": "ChatGPT 2026-11-23 更新说明：购物降价提醒示例",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
         }
       ]
     }
