@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-24T02:30:32.273Z",
+    "generated_at": "2026-11-24T23:45:36.623Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 147,
-      "current": 143,
+      "events": 148,
+      "current": 144,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -5417,6 +5417,42 @@
           "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
         }
       ]
+    },
+    {
+      "id": "b780c0bdeb5c6156",
+      "product_id": "muse",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 1,
+      "recorded_at": "2026-11-25",
+      "date": "2026-11-24",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Walmart于11月24日宣布，用户可在Muse内通过Walmart Agent Gateway查找黑五商品、组建购物篮并完成购买。首次向购物车加商品时须登录Walmart并设置Agent Profile（含消费限额）；付款使用Walmart账户已保存的卡。公告未列出Muse购物入口逐地区或用户批次覆盖，也未提供实际成交数据。",
+      "context": [
+        {
+          "label": "渠道",
+          "value": "Muse / Walmart Agent Gateway"
+        },
+        {
+          "label": "地区",
+          "value": "Walmart购物场景；公告未细分地区或批次"
+        },
+        {
+          "label": "可用性",
+          "value": "2026-11-24公告称当日开始"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Walmart Muse 购物与 Agent Gateway 接入公告",
+          "url": "https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse"
+        }
+      ]
     }
   ],
   "current": [
@@ -9019,6 +9055,34 @@
         {
           "title": "ChatGPT 2026-11-23 更新说明：购物降价提醒示例",
           "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        }
+      ]
+    },
+    {
+      "product_id": "muse",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Walmart于11月24日宣布，用户可在Muse内通过Walmart Agent Gateway查找黑五商品、组建购物篮并完成购买。首次向购物车加商品时须登录Walmart并设置Agent Profile（含消费限额）；付款使用Walmart账户已保存的卡。公告未列出Muse购物入口逐地区或用户批次覆盖，也未提供实际成交数据。",
+      "context": [
+        {
+          "label": "渠道",
+          "value": "Muse / Walmart Agent Gateway"
+        },
+        {
+          "label": "地区",
+          "value": "Walmart购物场景；公告未细分地区或批次"
+        },
+        {
+          "label": "可用性",
+          "value": "2026-11-24公告称当日开始"
+        }
+      ],
+      "published_at": "2026-11-24",
+      "last_verified": "2026-11-25",
+      "sources": [
+        {
+          "title": "Walmart Muse 购物与 Agent Gateway 接入公告",
+          "url": "https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse"
         }
       ]
     }
