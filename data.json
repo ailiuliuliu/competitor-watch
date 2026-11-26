@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-24T23:45:36.623Z",
+    "generated_at": "2026-11-26T00:04:59.339Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 148,
-      "current": 144,
+      "events": 150,
+      "current": 146,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -5453,6 +5453,98 @@
           "url": "https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse"
         }
       ]
+    },
+    {
+      "id": "1625608b4dbbdd38",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 1,
+      "recorded_at": "2026-11-26",
+      "date": "2026-11-24",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield 11月24日更新日志宣布接入Sand.ai的MAGI-2视频模型；可由提示词及图像、视频、音频参考生成带同步声音的视频，也支持文字指令针对已有片段编辑。输出4–30秒、1080p、25fps、六种画幅；单次最多10张图、5段视频和5段音频参考。官方未在更新日志列逐地区和套餐资格，未实测生成效果。",
+      "context": [
+        {
+          "label": "模型",
+          "value": "MAGI-2"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield网页和API"
+        },
+        {
+          "label": "地区",
+          "value": "官网未细分"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        },
+        {
+          "title": "Higgsfield MAGI-2 官方模型与积分指南",
+          "url": "https://higgsfield.ai/blog/higgsfield-magi-2"
+        }
+      ]
+    },
+    {
+      "id": "bbbe3e36bdbaf836",
+      "product_id": "higgsfield",
+      "field": "pricing",
+      "field_label": "定价",
+      "kind": "新发现",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-11-26",
+      "date": "2026-11-25",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield 11月25日官方MAGI-2指南列网页端10秒视频25积分、15秒37.5积分、30秒75积分；API相应为0.80/1.20/2.40美元。网页端美元估算基于Plus套餐59美元/月、1200积分（约0.049美元/积分），不是所有套餐统一现金价；Generate按钮会预显积分。指南未列地区或促销资格。",
+      "context": [
+        {
+          "label": "模型",
+          "value": "MAGI-2"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield网页积分/API美元分开"
+        },
+        {
+          "label": "订阅",
+          "value": "Plus仅用于美元估算"
+        },
+        {
+          "label": "币种",
+          "value": "网页积分；API美元"
+        },
+        {
+          "label": "地区",
+          "value": "英文版官网未细分"
+        },
+        {
+          "label": "计费周期",
+          "value": "Plus月付示例59美元/月"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        },
+        {
+          "title": "Higgsfield MAGI-2 官方模型与积分指南",
+          "url": "https://higgsfield.ai/blog/higgsfield-magi-2"
+        }
+      ]
     }
   ],
   "current": [
@@ -9083,6 +9175,82 @@
         {
           "title": "Walmart Muse 购物与 Agent Gateway 接入公告",
           "url": "https://corporate.walmart.com/news/2026/11/black-friday-deals-with-meta-muse"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield 11月24日更新日志宣布接入Sand.ai的MAGI-2视频模型；可由提示词及图像、视频、音频参考生成带同步声音的视频，也支持文字指令针对已有片段编辑。输出4–30秒、1080p、25fps、六种画幅；单次最多10张图、5段视频和5段音频参考。官方未在更新日志列逐地区和套餐资格，未实测生成效果。",
+      "context": [
+        {
+          "label": "模型",
+          "value": "MAGI-2"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield网页和API"
+        },
+        {
+          "label": "地区",
+          "value": "官网未细分"
+        }
+      ],
+      "published_at": "2026-11-24",
+      "last_verified": "2026-11-26",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        },
+        {
+          "title": "Higgsfield MAGI-2 官方模型与积分指南",
+          "url": "https://higgsfield.ai/blog/higgsfield-magi-2"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "pricing",
+      "field_label": "定价",
+      "value": "Higgsfield 11月25日官方MAGI-2指南列网页端10秒视频25积分、15秒37.5积分、30秒75积分；API相应为0.80/1.20/2.40美元。网页端美元估算基于Plus套餐59美元/月、1200积分（约0.049美元/积分），不是所有套餐统一现金价；Generate按钮会预显积分。指南未列地区或促销资格。",
+      "context": [
+        {
+          "label": "模型",
+          "value": "MAGI-2"
+        },
+        {
+          "label": "渠道",
+          "value": "Higgsfield网页积分/API美元分开"
+        },
+        {
+          "label": "订阅",
+          "value": "Plus仅用于美元估算"
+        },
+        {
+          "label": "币种",
+          "value": "网页积分；API美元"
+        },
+        {
+          "label": "地区",
+          "value": "英文版官网未细分"
+        },
+        {
+          "label": "计费周期",
+          "value": "Plus月付示例59美元/月"
+        }
+      ],
+      "published_at": "2026-11-25",
+      "last_verified": "2026-11-26",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        },
+        {
+          "title": "Higgsfield MAGI-2 官方模型与积分指南",
+          "url": "https://higgsfield.ai/blog/higgsfield-magi-2"
         }
       ]
     }
