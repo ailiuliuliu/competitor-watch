@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-26T00:04:59.339Z",
+    "generated_at": "2026-11-27T00:12:06.366Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 150,
-      "current": 146,
+      "events": 151,
+      "current": 147,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -5545,6 +5545,50 @@
           "url": "https://higgsfield.ai/blog/higgsfield-magi-2"
         }
       ]
+    },
+    {
+      "id": "6149c272d7228749",
+      "product_id": "manus",
+      "field": "pricing",
+      "field_label": "定价",
+      "kind": "新发现",
+      "important": false,
+      "top_eligible": true,
+      "featured_rank": null,
+      "recorded_at": "2026-11-27",
+      "date": "2026-11-27",
+      "date_role": "recorded",
+      "effective_at": null,
+      "old": null,
+      "fact": "Manus官方帮助中心列2026黑五限时优惠，截至11月30日23:59:59美国东部时间：网页端Pro $100档首月$90（原$100/月）、首年$900（原常规年付$1,000）；Max $200档首月$160（原$200/月）、首年$1,600（原常规年付$2,000）。仅首个计费周期优惠，后续按结账页常规价续费；低于$100的Pro档与Team套餐不参加。iOS/Android仅指定Pro $100和Max $200档，实际本地币种价格及既有订阅资格以对应商店为准。",
+      "context": [
+        {
+          "label": "报价",
+          "value": "Black Friday 2026"
+        },
+        {
+          "label": "渠道",
+          "value": "web；iOS/Android适用范围另列"
+        },
+        {
+          "label": "币种",
+          "value": "USD示例；应用商店本地币种"
+        },
+        {
+          "label": "计费方式",
+          "value": "monthly_or_annual"
+        },
+        {
+          "label": "地区",
+          "value": "英文版官网未细分"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Manus Black Friday 2026 membership offer",
+          "url": "https://help.manus.im/en/articles/18542127-how-does-the-manus-black-friday-2026-offer-work"
+        }
+      ]
     }
   ],
   "current": [
@@ -9251,6 +9295,42 @@
         {
           "title": "Higgsfield MAGI-2 官方模型与积分指南",
           "url": "https://higgsfield.ai/blog/higgsfield-magi-2"
+        }
+      ]
+    },
+    {
+      "product_id": "manus",
+      "field": "pricing",
+      "field_label": "定价",
+      "value": "Manus官方帮助中心列2026黑五限时优惠，截至11月30日23:59:59美国东部时间：网页端Pro $100档首月$90（原$100/月）、首年$900（原常规年付$1,000）；Max $200档首月$160（原$200/月）、首年$1,600（原常规年付$2,000）。仅首个计费周期优惠，后续按结账页常规价续费；低于$100的Pro档与Team套餐不参加。iOS/Android仅指定Pro $100和Max $200档，实际本地币种价格及既有订阅资格以对应商店为准。",
+      "context": [
+        {
+          "label": "报价",
+          "value": "Black Friday 2026"
+        },
+        {
+          "label": "渠道",
+          "value": "web；iOS/Android适用范围另列"
+        },
+        {
+          "label": "币种",
+          "value": "USD示例；应用商店本地币种"
+        },
+        {
+          "label": "计费方式",
+          "value": "monthly_or_annual"
+        },
+        {
+          "label": "地区",
+          "value": "英文版官网未细分"
+        }
+      ],
+      "published_at": null,
+      "last_verified": "2026-11-27",
+      "sources": [
+        {
+          "title": "Manus Black Friday 2026 membership offer",
+          "url": "https://help.manus.im/en/articles/18542127-how-does-the-manus-black-friday-2026-offer-work"
         }
       ]
     }
