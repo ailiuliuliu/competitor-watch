@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-11-27T00:12:06.366Z",
+    "generated_at": "2026-11-28T00:08:36.921Z",
     "baseline_date": "2026-10-31",
     "date_role_labels": {
       "announced": "公告日",
@@ -26,8 +26,8 @@
     },
     "counts": {
       "products": 16,
-      "events": 151,
-      "current": 147,
+      "events": 152,
+      "current": 148,
       "anchors": 46
     },
     "disclaimer": "本页仅收录可从公开来源核对的产品事实。每条给出来源链接与日期口径：公告日为官方公布该事的日期，生效日为对用户实际生效的日期，收录日为我们首次读到该信息的日期（不代表事情发生在当天）。首次收录不等于当天新发生。"
@@ -5589,6 +5589,42 @@
           "url": "https://help.manus.im/en/articles/18542127-how-does-the-manus-black-friday-2026-offer-work"
         }
       ]
+    },
+    {
+      "id": "3ef4273a20173059",
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "kind": "新发现",
+      "important": true,
+      "top_eligible": true,
+      "featured_rank": 1,
+      "recorded_at": "2026-11-28",
+      "date": "2026-11-26",
+      "date_role": "announced",
+      "effective_at": null,
+      "old": null,
+      "fact": "Higgsfield 11月26日更新日志称，Seedream 5.5 的 Resolution 选项新增4K，原有1K、1.5K、2K仍可选；入口为 Image → Seedream 5.5 → Resolution → 4K。官方明确该模型目前在美国不可用；未披露4K的积分消耗及具体套餐资格。",
+      "context": [
+        {
+          "label": "渠道",
+          "value": "Higgsfield Image web"
+        },
+        {
+          "label": "模型",
+          "value": "Seedream 5.5"
+        },
+        {
+          "label": "地区",
+          "value": "美国以外（官网仅明确美国暂不可用）"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
+        }
+      ]
     }
   ],
   "current": [
@@ -9331,6 +9367,34 @@
         {
           "title": "Manus Black Friday 2026 membership offer",
           "url": "https://help.manus.im/en/articles/18542127-how-does-the-manus-black-friday-2026-offer-work"
+        }
+      ]
+    },
+    {
+      "product_id": "higgsfield",
+      "field": "capabilities",
+      "field_label": "功能",
+      "value": "Higgsfield 11月26日更新日志称，Seedream 5.5 的 Resolution 选项新增4K，原有1K、1.5K、2K仍可选；入口为 Image → Seedream 5.5 → Resolution → 4K。官方明确该模型目前在美国不可用；未披露4K的积分消耗及具体套餐资格。",
+      "context": [
+        {
+          "label": "渠道",
+          "value": "Higgsfield Image web"
+        },
+        {
+          "label": "模型",
+          "value": "Seedream 5.5"
+        },
+        {
+          "label": "地区",
+          "value": "美国以外（官网仅明确美国暂不可用）"
+        }
+      ],
+      "published_at": "2026-11-26",
+      "last_verified": "2026-11-28",
+      "sources": [
+        {
+          "title": "Higgsfield 官方更新日志",
+          "url": "https://higgsfield.ai/creator-hub/changelog"
         }
       ]
     }
